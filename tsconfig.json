@@ -20,10 +20,10 @@
     "module": "preserve",
     "baseUrl": "./",
     "paths": {
-      "@core/*": ["src/app/core/*"],
-      "@domain/*": ["src/app/core/domain/*"],
-      "@infrastructure/*": ["src/app/core/infrastructure/*"],
-      "@application/*": ["src/app/core/application/*"],
+      "@domain/*": ["src/app/domain/*"],
+      "@infrastructure/*": ["src/app/infrastructure/*"],
+      "@application/*": ["src/app/application/*"],
+      "@presentation/*": ["src/app/presentation/*"],
       "@shared/*": ["src/app/shared/*"],
       "@features/*": ["src/app/features/*"]
     }
