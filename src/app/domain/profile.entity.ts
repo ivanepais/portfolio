@@ -1,6 +1,6 @@
 import { Contact } from '@domain/contact';
 import { SocialLink } from '@domain/social-link';
-import type {SocialPlatform} from '@domain/social-link';
+import type { SocialPlatform } from '@domain/social-link';
 
 export interface Profile {
   readonly fullName: string;

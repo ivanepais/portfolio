@@ -1,0 +1,80 @@
+{
+  "profile": {
+    "fullName": "Tu Nombre",
+    "role": "Frontend Developer",
+    "headline": "Construyo interfaces simples, claras y mantenibles.",
+    "summary": "Desarrollo porfolios, apps web y componentes con foco en calidad, escalabilidad y buena experiencia de usuario.",
+    "avatarUrl": "/assets/images/avatar.jpg"
+  },
+  "projects": [
+    {
+      "id": "project-1",
+      "title": "Todo App",
+      "description": "Aplicación para gestionar tareas con arquitectura limpia y componentes reutilizables.",
+      "imageUrl": "/assets/images/projects/todo-app.png",
+      "technologies": ["Angular", "TypeScript", "Tailwind"],
+      "repository": {
+        "label": "GitHub",
+        "url": "https://github.com/tuusuario/todo-app"
+      },
+      "demo": {
+        "label": "Demo",
+        "url": "https://tu-demo.com"
+      },
+      "featured": true
+    }
+  ],
+  "skills": [
+    {
+      "id": "skill-angular",
+      "name": "Angular",
+      "category": "Frontend",
+      "level": "advanced",
+      "featured": true
+    }
+  ],
+  "experiences": [
+    {
+      "id": "exp-1",
+      "company": "Empresa X",
+      "role": "Frontend Developer",
+      "startDate": "2024-01",
+      "endDate": null,
+      "summary": "Desarrollo de interfaces y componentes reutilizables.",
+      "achievements": [
+        "Mejoré la mantenibilidad del sistema de UI",
+        "Reduje duplicación de código"
+      ],
+      "featured": true
+    }
+  ],
+  "education": [
+    {
+      "id": "edu-1",
+      "institution": "Instituto / Universidad",
+      "degree": "Carrera o curso",
+      "startDate": "2022-01",
+      "endDate": "2023-12",
+      "summary": "Formación orientada a desarrollo web.",
+      "featured": false
+    }
+  ],
+  "socialLinks": [
+    {
+      "platform": "github",
+      "label": "GitHub",
+      "url": "https://github.com/tuusuario"
+    },
+    {
+      "platform": "linkedin",
+      "label": "LinkedIn",
+      "url": "https://linkedin.com/in/tuusuario"
+    }
+  ],
+  "contact": {
+    "email": "tuemail@correo.com",
+    "location": "Argentina",
+    "availableForWork": true,
+    "timezone": "America/Argentina/Buenos_Aires"
+  }
+}
