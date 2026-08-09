@@ -1,6 +1,5 @@
-import { Contact } from '@domain/contact';
-import { SocialLink } from '@domain/social-link';
-import type { SocialPlatform } from '@domain/social-link';
+import { Contact } from '@domain/contact.entity';
+import { SocialLink } from '@domain/social-link.entity';
 
 export interface Profile {
   readonly fullName: string;
@@ -8,6 +7,6 @@ export interface Profile {
   readonly headline: string;
   readonly summary: string;
   readonly avatarUrl?: string;
-  readonly contact?: Contact[];
+  readonly contact?: Contact;
   readonly socialLinks?: readonly SocialLink[];
 }

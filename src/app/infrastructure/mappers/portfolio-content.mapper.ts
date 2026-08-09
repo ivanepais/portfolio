@@ -1,6 +1,3 @@
-import { PortfolioContent } from '@application/ports/portfolio-content.port';
-import { PortfolioContentDto } from '../dtos/portfolio-content.dto';
-
 import { Contact } from '@domain/contact.entity';
 import { Project, ProjectLink } from '@domain/project.entity';
 import { SocialLink } from '@domain/social-link.entity';
@@ -9,19 +6,24 @@ import { Skill } from '@domain/skill.entity';
 import { Education } from '@domain/education.entity';
 import { Experience } from '@domain/experience.entity';
 
+import { PortfolioContent } from '@application/ports/portfolio-content.port';
+import { PortfolioContentDto } from '../dtos/portfolio-content.dto';
+
 export class PortfolioContentMapper {
   static toDomain(dto: PortfolioContentDto): PortfolioContent {
-    profile: this.profile(dto.profile),
-    projects: dto.projects.map((project) => this.project(project)),
-    skills: dto.skills.map((skill) => this.skill(skill)),
-    experiences: dto.experiences.map((experience) =>
-      this.experience(experience),
-    ),
-    education: dto.education.map((education) => this.education(education)),
-    socialLinks: dto.socialLinks.map((socialLink) =>
-      this.socialLink(socialLink),
-    ),
-    contact: this.contact(dto.contact),
+    return {
+      profile: this.profile(dto.profile),
+      projects: dto.projects.map((project) => this.project(project)),
+      skills: dto.skills.map((skill) => this.skill(skill)),
+      experiences: dto.experiences.map((experience) =>
+        this.experience(experience),
+      ),
+      education: dto.education.map((education) => this.education(education)),
+      socialLinks: dto.socialLinks.map((socialLink) =>
+        this.socialLink(socialLink),
+      ),
+      contact: this.contact(dto.contact),
+    };
   }
 
   private static contact(dto: PortfolioContentDto['contact']): Contact {
@@ -50,7 +52,6 @@ export class PortfolioContentMapper {
       headline: dto.headline,
       summary: dto.summary,
       avatarUrl: dto.avatarUrl,
-      contact: this.contact(dto.contact),
     };
   }
 

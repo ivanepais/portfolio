@@ -9,7 +9,6 @@ export type SocialPlatformDto =
   | 'email';
 
 export interface SocialLinkDto {
-  readonly id?: string;
   readonly platform: SocialPlatformDto;
   readonly label: string;
   readonly url: string;
@@ -28,9 +27,6 @@ export interface ProfileDto {
   readonly headline: string;
   readonly summary: string;
   readonly avatarUrl?: string;
-  readonly contact?: ContactDto;
-  readonly socialLinks?: readonly SocialLinkDto[];
-
 }
 
 export interface ProjectLinkDto {
@@ -84,6 +80,6 @@ export interface PortfolioContentDto {
   readonly skills: readonly SkillDto[];
   readonly experiences: readonly ExperienceDto[];
   readonly education: readonly EducationDto[];
-  readonly socialLinks?: readonly SocialLinkDto[];
-  readonly contact?: ContactDto;
+  readonly socialLinks: readonly SocialLinkDto[];
+  readonly contact: ContactDto;
 }

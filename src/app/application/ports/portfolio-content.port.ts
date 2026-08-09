@@ -1,3 +1,5 @@
+import { InjectionToken } from '@angular/core';
+
 import { Profile } from '@domain/profile.entity';
 import { Project } from '@domain/project.entity';
 import { Skill } from '@domain/skill.entity';
@@ -19,3 +21,7 @@ export interface PortfolioContent {
 export interface PortfolioContentPort {
   getPortfolioContent(): Promise<PortfolioContent>;
 }
+
+export const PORTFOLIO_CONTENT_PORT = new InjectionToken<PortfolioContentPort>(
+  'PORTFOLIO_CONTENT_PORT',
+);

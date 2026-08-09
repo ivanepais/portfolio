@@ -1,6 +1,7 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { firstValueFrom } from 'rxjs';
+import { PortfolioContent } from '@application/ports/portfolio-content.port';
 import { PortfolioContentPort } from '@application/ports/portfolio-content.port';
 import { PortfolioContentDto } from '../dtos/portfolio-content.dto';
 import { PortfolioContentMapper } from '../mappers/portfolio-content.mapper';
