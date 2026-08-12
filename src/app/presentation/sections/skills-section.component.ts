@@ -1,3 +1,4 @@
+/*
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
@@ -31,4 +32,44 @@ import { Skill } from '@domain/skill.entity';
 })
 export class SkillsSectionComponent {
   @Input({ required: true }) skills!: readonly Skill[];
+}
+*/
+
+import { CommonModule } from '@angular/common';
+import { Component, Input } from '@angular/core';
+
+import { Skill } from '@domain/skill.entity';
+
+@Component({
+  selector: 'app-skills-section',
+  standalone: true,
+  imports: [CommonModule],
+  template: `
+    <section
+      id="skills"
+      class="scroll-mt-24 py-12 sm:py-16 lg:py-20"
+    >
+      <div class="max-w-5xl">
+        <h2
+          class="text-2xl font-semibold tracking-tight text-text sm:text-3xl"
+        >
+          Habilidades
+        </h2>
+
+        <div class="mt-8 flex flex-wrap gap-3">
+          @for (skill of skills; track skill.id) {
+            <span
+              class="rounded-full border border-border bg-surface px-4 py-2 text-sm font-medium text-muted shadow-sm"
+            >
+              {{ skill.name }}
+            </span>
+          }
+        </div>
+      </div>
+    </section>
+  `,
+})
+export class SkillsSectionComponent {
+  @Input({ required: true })
+  skills!: readonly Skill[];
 }

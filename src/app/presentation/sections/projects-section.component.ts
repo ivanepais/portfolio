@@ -222,6 +222,8 @@ export class ProjectsSectionComponent {
 }
 */
 
+
+/*
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
@@ -271,6 +273,88 @@ import { Project } from '@domain/project.entity';
                     target="_blank" 
                     rel="noreferrer"
                     class="inline-flex items-center rounded-full border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:border-slate-400 hover:text-slate-950 dark:border-slate-700 dark:text-slate-300 dark:hover:border-slate-500 dark:hover:text-slate-50"
+                  >
+                    {{ project.demo.label }}
+                  </a>
+                }
+              </div>
+            </article>
+          }
+        </div>
+      </div>
+    </section>
+  `,
+})
+export class ProjectsSectionComponent {
+  @Input({ required: true })
+  projects!: readonly Project[];
+}
+
+*/
+
+
+import { CommonModule } from '@angular/common';
+import { Component, Input } from '@angular/core';
+
+import { Project } from '@domain/project.entity';
+
+@Component({
+  selector: 'app-projects-section',
+  standalone: true,
+  imports: [CommonModule],
+  template: `
+    <section
+      id="projects"
+      class="scroll-mt-24 py-12 sm:py-16 lg:py-20"
+    >
+      <div class="max-w-5xl">
+        <h2
+          class="text-2xl font-semibold tracking-tight text-text sm:text-3xl"
+        >
+          Proyectos
+        </h2>
+
+        <div class="mt-8 grid gap-6 md:grid-cols-2">
+          @for (project of projects; track project.id) {
+            <article
+              class="rounded-2xl border border-border bg-surface p-6 shadow-sm transition-shadow hover:shadow-md"
+            >
+              <h3
+                class="text-xl font-semibold tracking-tight text-text"
+              >
+                {{ project.title }}
+              </h3>
+
+              <p
+                class="mt-3 text-sm leading-6 text-muted"
+              >
+                {{ project.description }}
+              </p>
+
+              <p
+                class="mt-4 text-sm text-muted"
+              >
+                {{ project.technologies.join(' · ') }}
+              </p>
+
+              <div class="mt-6 flex flex-wrap gap-3">
+                @if (project.repository) {
+                  <a
+                    [href]="project.repository.url"
+                    target="_blank"
+                    rel="noreferrer"
+                    class="inline-flex items-center rounded-full bg-accent px-4 py-2 text-sm font-medium text-surface transition-opacity hover:opacity-90"
+                  >
+                    {{ project.repository.label }}
+                  </a>
+                }
+
+                @if (project.demo) {
+                  <a
+                    [href]="project.demo.url"
+                    target="_blank"
+                    rel="noreferrer"
+                    class="inline-flex items-center rounded-full border border-border px-4 py-2 text-sm font-medium text-text transition-colors hover:bg-background"
                   >
                     {{ project.demo.label }}
                   </a>
