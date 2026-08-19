@@ -6,8 +6,8 @@
   --font-sans: Inter, ui-sans-serif, system-ui, sans-serif;
 
   --color-background: oklch(0.21 0.03 256.8);
-  --color-surface: oklch(0.3791 0.1378 265.52);
-  --color-text: oklch(0.7721 0.119 297.96);
+  --color-surface: oklch(0.32 0.1 265.9);
+  --color-text: oklch(0.61 0.18 297.96);
   --color-muted:  oklch(0.9288 0.0126 255.51);
   --color-border: oklch(0.922 0.014 255.3);
   --color-accent: oklch(0.21 0.03 256.8);

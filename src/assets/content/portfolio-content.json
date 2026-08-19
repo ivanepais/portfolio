@@ -1,18 +1,34 @@
 {
   "profile": {
     "fullName": "Tu Nombre",
-    "role": "Frontend Developer",
+    "role": "Software Developer",
     "headline": "Construyo interfaces simples, claras y mantenibles.",
     "summary": "Desarrollo porfolios, apps web y componentes con foco en calidad, escalabilidad y buena experiencia de usuario.",
     "avatarUrl": "/assets/images/avatar.jpg"
   },
   "projects": [
     {
+      "id": "project-2",
+      "title": "Portfolio",
+      "description": "Aplicación para gestionar tareas con arquitectura limpia y componentes reutilizables.",
+      "imageUrl": "/assets/images/projects/todo-app.png",
+      "technologies": ["Angular", "TypeScript", "Tailwind", "Vitest"],
+      "repository": {
+        "label": "GitHub",
+        "url": "https://github.com/tuusuario/todo-app"
+      },
+      "demo": {
+        "label": "Demo",
+        "url": "https://tu-demo.com"
+      },
+      "featured": true
+    },
+    {
       "id": "project-1",
       "title": "Todo App",
       "description": "Aplicación para gestionar tareas con arquitectura limpia y componentes reutilizables.",
       "imageUrl": "/assets/images/projects/todo-app.png",
-      "technologies": ["Angular", "TypeScript", "Tailwind"],
+      "technologies": ["TypeScript", "React", "CSS/StyledComponents", "Vitest", "RTL"],
       "repository": {
         "label": "GitHub",
         "url": "https://github.com/tuusuario/todo-app"
@@ -25,10 +41,52 @@
     }
   ],
   "skills": [
+     {
+      "id": "skill-html",
+      "name": "HTML",
+      "category": "Frontend",
+      "level": "advanced",
+      "featured": true
+    },
+    {
+      "id": "skill-css",
+      "name": "CSS",
+      "category": "Frontend",
+      "level": "advanced",
+      "featured": true
+    },
+    {
+      "id": "skill-javascript",
+      "name": "JavaSript",
+      "category": "Frontend",
+      "level": "advanced",
+      "featured": true
+    },
+    {
+      "id": "skill-react",
+      "name": "React",
+      "category": "Frontend",
+      "level": "advanced",
+      "featured": true
+    },
     {
       "id": "skill-angular",
       "name": "Angular",
       "category": "Frontend",
+      "level": "advanced",
+      "featured": true
+    },
+    {
+      "id": "skill-tailwind",
+      "name": "Tailwind",
+      "category": "Frontend",
+      "level": "advanced",
+      "featured": true
+    },
+    {
+      "id": "skill-python",
+      "name": "Python",
+      "category": "Backend",
       "level": "advanced",
       "featured": true
     }

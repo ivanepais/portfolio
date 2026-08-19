@@ -79,7 +79,6 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 import { Contact } from '@domain/contact.entity';
-import { SocialLink } from '@domain/social-link.entity';
 
 @Component({
   selector: 'app-contact-section',
@@ -88,56 +87,33 @@ import { SocialLink } from '@domain/social-link.entity';
   template: `
     <section
       id="contact"
-      class="scroll-mt-24 py-12 sm:py-16 lg:py-20"
+      class="scroll-mt-20"
     >
-      <div class="max-w-5xl">
-        <h2
-          class="text-2xl font-semibold tracking-tight text-text sm:text-3xl"
-        >
-          Contacto
-        </h2>
+      <div
+        class="mx-auto max-w-2xl mt-8 rounded-2xl border border-border bg-surface p-6 shadow-sm"
+      >
+        <p class="text-base leading-7 text-muted">
+          <a
+            class="font-medium text-text transition-colors hover:text-muted"
+            [href]="'mailto:' + contact.email"
+          >
+            {{ contact.email }}
+          </a>
+        </p>
 
-        <div
-          class="mt-8 rounded-2xl border border-border bg-surface p-6 shadow-sm"
-        >
-          <p class="text-base leading-7 text-muted">
-            <a
-              class="font-medium text-text transition-colors hover:text-muted"
-              [href]="'mailto:' + contact.email"
-            >
-              {{ contact.email }}
-            </a>
+        @if (contact.location) {
+          <p class="mt-2 text-sm text-muted">
+            {{ contact.location }}
           </p>
+        }
 
-          @if (contact.location) {
-            <p class="mt-2 text-sm text-muted">
-              {{ contact.location }}
-            </p>
-          }
-
-          <p class="mt-4 text-sm font-medium text-text">
-            {{
-              contact.availableForWork
-                ? 'Disponible para nuevas oportunidades'
-                : 'No disponible actualmente'
-            }}
-          </p>
-
-          @if (socialLinks.length) {
-            <div class="mt-6 flex flex-wrap gap-3">
-              @for (link of socialLinks; track link.url) {
-                <a
-                  class="inline-flex items-center rounded-full border border-border px-4 py-2 text-sm font-medium text-text transition-colors hover:bg-background"
-                  [href]="link.url"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {{ link.label }}
-                </a>
-              }
-            </div>
-          }
-        </div>
+        <p class="mt-4 text-sm font-medium text-text">
+          {{
+            contact.availableForWork
+              ? 'Disponible para nuevas oportunidades'
+              : 'No disponible actualmente'
+          }}
+        </p>
       </div>
     </section>
   `,
@@ -145,7 +121,4 @@ import { SocialLink } from '@domain/social-link.entity';
 export class ContactSectionComponent {
   @Input({ required: true })
   contact!: Contact;
-
-  @Input({ required: true })
-  socialLinks!: readonly SocialLink[];
 }

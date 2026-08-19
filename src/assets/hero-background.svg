@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700&amp;display=swap');
+      
+      .lavender-text {
+        font-family: 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif;
+        font-size: 34px;
+        font-weight: 700;
+        fill: #B497D6;
+        text-anchor: start;
+        dominant-baseline: middle; /* Alineación vertical al centro de la coordenada Y */
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        opacity: 0;
+        animation: wordFade 12s infinite ease-in-out;
+      }
+
+      /* Secuencia de tiempo (2s por palabra) */
+      .row-1 { animation-delay: 0s; }
+      .row-2 { animation-delay: 2s; }
+      .row-3 { animation-delay: 4s; }
+      .row-4 { animation-delay: 6s; }
+      .row-5 { animation-delay: 8s; }
+      .row-6 { animation-delay: 10s; }
+
+      @keyframes wordFade {
+        0% { opacity: 0; fill: #B497D6; transform: translateY(0); }
+        3% { opacity: 0.95; fill: #9370DB; transform: translateY(-3px); }
+        13.6% { opacity: 0.95; fill: #9370DB; transform: translateY(-3px); }
+        16.6% { opacity: 0; fill: #B497D6; transform: translateY(0); }
+        100% { opacity: 0; fill: #B497D6; transform: translateY(0); }
+      }
+
+      /* Estilo del Corazón Grande Estático */
+      .static-outline-heart {
+        fill: none;
+        stroke: #B497D6;
+        stroke-width: 1.5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        opacity: 0.75;
+      }
+    </style>
+  </defs>
+
+  <g transform="translate(310, 0)">
+    
+    <!-- Posición del Corazón -->
+    <svg x="0" y="135" width="150" height="150" viewBox="0 0 24 24">
+      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" class="static-outline-heart"/>
+    </svg>
+
+    <!-- Todas las palabras comparten la misma coordenada -->
+    <text x="175" y="208" class="lavender-text row-1">Design</text>
+    <text x="175" y="208" class="lavender-text row-2">Develop</text>
+    <text x="175" y="208" class="lavender-text row-3">Create</text>
+    <text x="175" y="208" class="lavender-text row-4">Passion</text>
+    <text x="175" y="208" class="lavender-text row-5">Technology</text>
+    <text x="175" y="208" class="lavender-text row-6">Peace</text>
+
+  </g>
+</svg>
