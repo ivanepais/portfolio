@@ -1,11 +1,3 @@
-import { Profile } from '@domain/profile.entity';
-import { Project } from '@domain/project.entity';
-import { Skill } from '@domain/skill.entity';
-import { Experience } from '@domain/experience.entity';
-import { Education } from '@domain/education.entity';
-import { SocialLink } from '@domain/social-link.entity';
-import { Contact } from '@domain/contact.entity';
-
 import { describe, expect, it, vi } from 'vitest';
 
 import {
@@ -96,4 +88,22 @@ describe('GetPortfolioContentUseCase', () => {
     expect(result).toBe(portfolioContent);
     expect(getPortfolioContent).toHaveBeenCalledOnce();
   });
+
+  it('debería propagar el error del puerto', async () => {
+	  const error = new Error('Error al obtener el portfolio');
+
+	  const getPortfolioContent = vi
+	    .fn()
+	    .mockRejectedValue(error);
+
+	  const portfolioContentPort: PortfolioContentPort = {
+	    getPortfolioContent,
+	  };
+
+	  const useCase = new GetPortfolioContentUseCase(
+	    portfolioContentPort,
+	  );
+
+	  await expect(useCase.execute()).rejects.toBe(error);
+	});
 });
