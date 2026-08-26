@@ -37,6 +37,8 @@
     "@angular/compiler-cli": "^21.2.0",
     "@eslint/js": "^10.0.1",
     "@tailwindcss/postcss": "^4.1.12",
+    "@testing-library/angular": "^19.4.2",
+    "@testing-library/jest-dom": "^7.0.1",
     "@types/express": "^5.0.1",
     "@types/node": "^20.17.19",
     "angular-eslint": "21.4.0",
