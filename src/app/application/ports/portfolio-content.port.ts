@@ -23,5 +23,5 @@ export interface PortfolioContentPort {
 }
 
 export const PORTFOLIO_CONTENT_PORT = new InjectionToken<PortfolioContentPort>(
-  'PORTFOLIO_CONTENT_PORT',
+  'PORTFOLIO_CONTENT_PORT'
 );

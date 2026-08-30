@@ -20,10 +20,10 @@ describe('PortfolioFacade', () => {
         {
           provide: GetPortfolioContentUseCase,
           useValue: {
-            execute,
-          },
-        },
-      ],
+            execute
+          }
+        }
+      ]
     });
 
     facade = TestBed.inject(PortfolioFacade);

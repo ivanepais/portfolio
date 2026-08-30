@@ -9,7 +9,7 @@ import { SocialLink } from '@domain/social-link.entity';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <header class="flex items-center justify-between mx-auto max-w-2xl">
+    <header class="mx-auto flex max-w-2xl items-center justify-between">
       <div class="size-12 rounded-full object-cover">
         @if (profile.avatarUrl) {
           <img
@@ -22,12 +22,12 @@ import { SocialLink } from '@domain/social-link.entity';
 
       @if (socialLinks.length) {
         <nav
-          class="flex items-center gap-4 transition-colors hover:text-accent"
+          class="hover:text-accent flex items-center gap-4 transition-colors"
           aria-label="Social Networks"
         >
           @for (link of socialLinks; track link.platform) {
             <a
-              class="inline-flex items-center rounded-full border border-border px-4 py-2 text-sm font-medium text-text transition-colors hover:bg-muted"
+              class="border-border text-text hover:bg-muted inline-flex items-center rounded-full border px-4 py-2 text-sm font-medium transition-colors"
               [href]="link.platform === 'email' ? 'mailto:' + link.url : link.url"
               target="_blank"
               rel="noreferrer"
@@ -36,18 +36,17 @@ import { SocialLink } from '@domain/social-link.entity';
             </a>
           }
           <a
-            class="inline-flex items-center rounded-full border border-border px-4 py-2 text-sm font-medium text-text transition-colors hover:bg-muted"
+            class="border-border text-text hover:bg-muted inline-flex items-center rounded-full border px-4 py-2 text-sm font-medium transition-colors"
             href="../../../assets/public/documents/cv.pdf"
             target="_blank"
             rel="noopener noreferrer"
           >
-            CV          
+            CV
           </a>
-
         </nav>
       }
     </header>
-  `,
+  `
 })
 export class PortfolioHeaderComponent {
   @Input({ required: true })

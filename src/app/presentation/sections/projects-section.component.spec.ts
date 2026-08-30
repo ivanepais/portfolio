@@ -14,14 +14,14 @@ describe('ProjectsSectionComponent', () => {
       technologies: ['Angular', 'TypeScript'],
       repository: {
         label: 'GitHub',
-        url: 'https://github.com/test/project',
+        url: 'https://github.com/test/project'
       },
       demo: {
         label: 'Demo',
-        url: 'https://example.com/project',
+        url: 'https://example.com/project'
       },
-      featured: true,
-    },
+      featured: true
+    }
   ];
 
   const projectWithoutLinks: Project = {
@@ -29,7 +29,7 @@ describe('ProjectsSectionComponent', () => {
     title: 'Project Without Links',
     description: 'Project without repository or demo',
     technologies: ['Angular'],
-    featured: false,
+    featured: false
   };
 
   const emptyProjects: readonly Project[] = [];
@@ -37,72 +37,56 @@ describe('ProjectsSectionComponent', () => {
   it('debería mostrar los datos del proyecto', async () => {
     await render(ProjectsSectionComponent, {
       componentInputs: {
-        projects,
-      },
+        projects
+      }
     });
 
     expect(
       screen.getByRole('heading', {
-        name: projects[0].title,
-      }),
-    ).toBeTruthy();
-    
-    expect(
-      screen.getByText(projects[0].description),
+        name: projects[0].title
+      })
     ).toBeTruthy();
 
-    expect(
-      screen.getByText(
-        projects[0].technologies.join(' · '),
-      ),
-    ).toBeTruthy();
+    expect(screen.getByText(projects[0].description)).toBeTruthy();
+
+    expect(screen.getByText(projects[0].technologies.join(' · '))).toBeTruthy();
 
     const repositoryLink = screen.getByRole('link', {
-      name: projects[0].repository!.label,
+      name: projects[0].repository!.label
     });
 
-    expect(
-      repositoryLink.getAttribute('href'),
-    ).toBe(projects[0].repository!.url);
+    expect(repositoryLink.getAttribute('href')).toBe(projects[0].repository!.url);
 
     const demoLink = screen.getByRole('link', {
-      name: projects[0].demo!.label,
+      name: projects[0].demo!.label
     });
 
-    expect(
-      demoLink.getAttribute('href'),
-    ).toBe(projects[0].demo!.url);
+    expect(demoLink.getAttribute('href')).toBe(projects[0].demo!.url);
   });
 
   it('no debería mostrar los links opcionales cuando no existen', async () => {
     await render(ProjectsSectionComponent, {
       componentInputs: {
-        projects: [projectWithoutLinks],
-      },
+        projects: [projectWithoutLinks]
+      }
     });
 
-    expect(
-      screen.queryByRole('link', { name: 'GitHub' }),
-    ).toBeNull();
+    expect(screen.queryByRole('link', { name: 'GitHub' })).toBeNull();
 
-    expect(
-      screen.queryByRole('link', { name: 'Demo' }),
-    ).toBeNull();
-
+    expect(screen.queryByRole('link', { name: 'Demo' })).toBeNull();
   });
 
   it('no debería mostrar proyectos cuando la colección está vacía', async () => {
     await render(ProjectsSectionComponent, {
       componentInputs: {
-        projects: emptyProjects,
-      },
+        projects: emptyProjects
+      }
     });
 
     expect(
       screen.queryByRole('heading', {
-        name: projects[0].title,
-      }),
+        name: projects[0].title
+      })
     ).toBeNull();
   });
-
 });

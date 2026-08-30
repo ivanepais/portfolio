@@ -8,7 +8,7 @@ describe('BackToTopComponent', () => {
     await render(BackToTopComponent);
 
     const link = screen.getByRole('link', {
-      name: 'Back to Top',
+      name: 'Back to Top'
     });
 
     expect(link).toBeTruthy();

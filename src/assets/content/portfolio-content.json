@@ -8,9 +8,25 @@
   },
   "projects": [
     {
+      "id": "project-3",
+      "title": "Spend manager",
+      "description": "Aplicación para gestionar gastos con arquitectura limpia y componentes reutilizables.",
+      "imageUrl": "/assets/images/projects/todo-app.png",
+      "technologies": ["NestJS", "TypeScript", "Swagger", "Jest"],
+      "repository": {
+        "label": "GitHub",
+        "url": "https://github.com/tuusuario/todo-app"
+      },
+      "demo": {
+        "label": "Demo",
+        "url": "https://tu-demo.com"
+      },
+      "featured": true
+    },
+    {
       "id": "project-2",
       "title": "Portfolio",
-      "description": "Aplicación para gestionar tareas con arquitectura limpia y componentes reutilizables.",
+      "description": "Aplicación para gestionar proyectos con arquitectura limpia y componentes reutilizables.",
       "imageUrl": "/assets/images/projects/todo-app.png",
       "technologies": ["Angular", "TypeScript", "Tailwind", "Vitest"],
       "repository": {
@@ -41,7 +57,7 @@
     }
   ],
   "skills": [
-     {
+    {
       "id": "skill-html",
       "name": "HTML",
       "category": "Frontend",
@@ -89,7 +105,21 @@
       "category": "Backend",
       "level": "advanced",
       "featured": true
-    }
+    },
+    {
+      "id": "skill-c",
+      "name": "C",
+      "category": "Backend",
+      "level": "advanced",
+      "featured": true
+    },
+    {
+      "id": "skill-eng",
+      "name": "English",
+      "category": "Backend",
+      "level": "advanced",
+      "featured": true
+    },
   ],
   "experiences": [
     {

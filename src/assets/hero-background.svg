@@ -3,7 +3,7 @@
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700&amp;display=swap');
       
-      .lavender-text {
+      .text {
         font-family: 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif;
         font-size: 34px;
         font-weight: 700;
@@ -13,21 +13,21 @@
         letter-spacing: 2px;
         text-transform: uppercase;
         opacity: 0;
-        animation: wordFade 12s infinite ease-in-out;
+        animation: wordFade 18s infinite ease-in-out;
       }
 
       /* Secuencia de tiempo (2s por palabra) */
       .row-1 { animation-delay: 0s; }
-      .row-2 { animation-delay: 2s; }
-      .row-3 { animation-delay: 4s; }
-      .row-4 { animation-delay: 6s; }
-      .row-5 { animation-delay: 8s; }
-      .row-6 { animation-delay: 10s; }
+      .row-2 { animation-delay: 3s; }
+      .row-3 { animation-delay: 6s; }
+      .row-4 { animation-delay: 9s; }
+      .row-5 { animation-delay: 12s; }
+      .row-6 { animation-delay: 15s; }
 
       @keyframes wordFade {
         0% { opacity: 0; fill: #B497D6; transform: translateY(0); }
-        3% { opacity: 0.95; fill: #9370DB; transform: translateY(-3px); }
-        13.6% { opacity: 0.95; fill: #9370DB; transform: translateY(-3px); }
+        5.5% { opacity: 0.95; fill: #9370DB; transform: translateY(-3px); }
+        11.1% { opacity: 0.95; fill: #9370DB; transform: translateY(-3px); }
         16.6% { opacity: 0; fill: #B497D6; transform: translateY(0); }
         100% { opacity: 0; fill: #B497D6; transform: translateY(0); }
       }
@@ -52,12 +52,12 @@
     </svg>
 
     <!-- Todas las palabras comparten la misma coordenada -->
-    <text x="175" y="208" class="lavender-text row-1">Design</text>
-    <text x="175" y="208" class="lavender-text row-2">Develop</text>
-    <text x="175" y="208" class="lavender-text row-3">Create</text>
-    <text x="175" y="208" class="lavender-text row-4">Passion</text>
-    <text x="175" y="208" class="lavender-text row-5">Technology</text>
-    <text x="175" y="208" class="lavender-text row-6">Peace</text>
+    <text x="175" y="208" class="text row-1">Design</text>
+    <text x="175" y="208" class="text row-2">Develop</text>
+    <text x="175" y="208" class="text row-3">Create</text>
+    <text x="175" y="208" class="text row-4">Passion</text>
+    <text x="175" y="208" class="text row-5">Technology</text>
+    <text x="175" y="208" class="text row-6">Peace</text>
 
   </g>
 </svg>

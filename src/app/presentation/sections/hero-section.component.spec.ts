@@ -10,27 +10,24 @@ describe('HeroSectionComponent', () => {
     fullName: 'Test User',
     role: 'Frontend Developer',
     headline: 'Test headline',
-    summary: 'Test summary',
+    summary: 'Test summary'
   };
-
 
   it('debería mostrar el nombre del perfil', async () => {
     await render(HeroSectionComponent, {
       componentInputs: {
-        profile,
-      },
+        profile
+      }
     });
 
-    expect(
-      screen.getByRole('heading', { name: profile.fullName }),
-    ).toBeTruthy();
+    expect(screen.getByRole('heading', { name: profile.fullName })).toBeTruthy();
   });
 
   it('debería mostrar el rol del perfil', async () => {
     await render(HeroSectionComponent, {
       componentInputs: {
-        profile,
-      },
+        profile
+      }
     });
 
     expect(screen.getByText(profile.role)).toBeTruthy();
@@ -39,22 +36,20 @@ describe('HeroSectionComponent', () => {
   it('debería mostrar el headline del perfil', async () => {
     await render(HeroSectionComponent, {
       componentInputs: {
-        profile,
-      },
+        profile
+      }
     });
 
     expect(screen.getByText(profile.headline)).toBeTruthy();
-  });  
+  });
 
   it('debería mostrar el resumen del perfil', async () => {
     await render(HeroSectionComponent, {
       componentInputs: {
-        profile,
-      },
+        profile
+      }
     });
 
     expect(screen.getByText(profile.summary)).toBeTruthy();
   });
-
-
 });

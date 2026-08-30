@@ -22,7 +22,7 @@ import { PortfolioLayoutComponent } from './portfolio-layout.component';
       {{ socialLinks.length }}
     </span>
   `,
-  standalone: true,
+  standalone: true
 })
 class PortfolioHeaderStubComponent {
   @Input({ required: true })
@@ -35,23 +35,19 @@ class PortfolioHeaderStubComponent {
 @Component({
   selector: 'app-back-to-top',
   template: '<span data-testid="back-to-top-stub"></span>',
-  standalone: true,
+  standalone: true
 })
 class BackToTopStubComponent {}
 
 @Component({
   selector: 'app-portfolio-layout-host',
   template: `
-    <app-portfolio-layout
-      [profile]="profile"
-      [socialLinks]="socialLinks"
-      [footerText]="footerText"
-    >
+    <app-portfolio-layout [profile]="profile" [socialLinks]="socialLinks" [footerText]="footerText">
       <p>Contenido proyectado</p>
     </app-portfolio-layout>
   `,
   standalone: true,
-  imports: [PortfolioLayoutComponent],
+  imports: [PortfolioLayoutComponent]
 })
 class PortfolioLayoutHostComponent {
   @Input({ required: true })
@@ -70,15 +66,15 @@ describe('PortfolioLayoutComponent', () => {
     role: 'Frontend Developer',
     headline: 'Test headline',
     summary: 'Test summary',
-    avatarUrl: '/avatar.jpg',
+    avatarUrl: '/avatar.jpg'
   };
 
   const socialLinks: readonly SocialLink[] = [
     {
       platform: 'github',
       label: 'GitHub',
-      url: 'https://github.com/test',
-    },
+      url: 'https://github.com/test'
+    }
   ];
 
   const footerText = '© 2026 Test User';
@@ -86,52 +82,33 @@ describe('PortfolioLayoutComponent', () => {
   it('debería componer el layout', async () => {
     TestBed.overrideComponent(PortfolioLayoutComponent, {
       remove: {
-        imports: [
-          PortfolioHeaderComponent,
-          BackToTopComponent,
-        ],
+        imports: [PortfolioHeaderComponent, BackToTopComponent]
       },
       add: {
-        imports: [
-          PortfolioHeaderStubComponent,
-          BackToTopStubComponent,
-        ],
-      },
+        imports: [PortfolioHeaderStubComponent, BackToTopStubComponent]
+      }
     });
 
-    await render(
-      PortfolioLayoutHostComponent,
-      {
-        componentInputs: {
-          profile,
-          socialLinks,
-          footerText,
-        },
-      },
+    await render(PortfolioLayoutHostComponent, {
+      componentInputs: {
+        profile,
+        socialLinks,
+        footerText
+      }
+    });
+
+    expect(screen.getByTestId('portfolio-header-stub')).toBeTruthy();
+
+    expect(screen.getByTestId('portfolio-header-stub').textContent).toContain(profile.fullName);
+
+    expect(screen.getByTestId('portfolio-header-social-links').textContent).toContain(
+      socialLinks.length.toString()
     );
 
-    expect(
-      screen.getByTestId('portfolio-header-stub'),
-    ).toBeTruthy();
+    expect(screen.getByTestId('back-to-top-stub')).toBeTruthy();
 
-    expect(
-      screen.getByTestId('portfolio-header-stub').textContent,
-    ).toContain(profile.fullName);
+    expect(screen.getByText('Contenido proyectado')).toBeTruthy();
 
-    expect(
-      screen.getByTestId('portfolio-header-social-links').textContent,
-    ).toContain(socialLinks.length.toString());
-
-    expect(
-      screen.getByTestId('back-to-top-stub'),
-    ).toBeTruthy();
-
-    expect(
-      screen.getByText('Contenido proyectado'),
-    ).toBeTruthy();
-
-    expect(
-      screen.getByText(footerText),
-    ).toBeTruthy();
+    expect(screen.getByText(footerText)).toBeTruthy();
   });
 });

@@ -7,17 +7,14 @@ import { PortfolioContentDto } from '../dtos/portfolio-content.dto';
 import { PortfolioContentMapper } from '../mappers/portfolio-content.mapper';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
-export class JsonPortfolioContentAdapter
-  implements PortfolioContentPort
-{
-
+export class JsonPortfolioContentAdapter implements PortfolioContentPort {
   private readonly http = inject(HttpClient);
 
   async getPortfolioContent(): Promise<PortfolioContent> {
     const dto = await firstValueFrom(
-      this.http.get<PortfolioContentDto>('assets/content/portfolio-content.json'),
+      this.http.get<PortfolioContentDto>('assets/content/portfolio-content.json')
     );
 
     return PortfolioContentMapper.toDomain(dto);

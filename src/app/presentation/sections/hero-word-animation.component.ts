@@ -7,14 +7,11 @@ import { Component, signal } from '@angular/core';
     <div class="hero-word-container">
       @for (word of words; track word) {
         @if ($index === currentIndex()) {
-          <span
-            class="hero-word"
-            (animationend)="nextWord()"
-          >
+          <span class="hero-word" (animationend)="nextWord()">
             {{ word }}
           </span>
         }
-      } 
+      }
     </div>
   `,
   styles: `
@@ -65,23 +62,14 @@ import { Component, signal } from '@angular/core';
 
       animation: hero-word-fade 4s ease-in-out;
     }
-  `,
+  `
 })
 export class HeroWordAnimationComponent {
-  readonly words = [
-    'Design',
-    'Develop',
-    'Create',
-    'Passion',
-    'Technology',
-    'Peace',
-  ];
+  readonly words = ['Design', 'Develop', 'Create', 'Passion', 'Technology', 'Peace'];
 
   readonly currentIndex = signal(0);
 
   nextWord(): void {
-    this.currentIndex.update(
-      (index) => (index + 1) % this.words.length,
-    );
+    this.currentIndex.update((index) => (index + 1) % this.words.length);
   }
 }

@@ -15,14 +15,10 @@ export class PortfolioContentMapper {
       profile: this.profile(dto.profile),
       projects: dto.projects.map((project) => this.project(project)),
       skills: dto.skills.map((skill) => this.skill(skill)),
-      experiences: dto.experiences.map((experience) =>
-        this.experience(experience),
-      ),
+      experiences: dto.experiences.map((experience) => this.experience(experience)),
       education: dto.education.map((education) => this.education(education)),
-      socialLinks: dto.socialLinks.map((socialLink) =>
-        this.socialLink(socialLink),
-      ),
-      contact: this.contact(dto.contact),
+      socialLinks: dto.socialLinks.map((socialLink) => this.socialLink(socialLink)),
+      contact: this.contact(dto.contact)
     };
   }
 
@@ -31,17 +27,15 @@ export class PortfolioContentMapper {
       email: dto.email,
       location: dto.location,
       availableForWork: dto.availableForWork,
-      timezone: dto.timezone,
+      timezone: dto.timezone
     };
   }
 
-  private static socialLink(
-    dto: PortfolioContentDto['socialLinks'][number],
-  ): SocialLink {
+  private static socialLink(dto: PortfolioContentDto['socialLinks'][number]): SocialLink {
     return {
       platform: dto.platform,
       label: dto.label,
-      url: dto.url,
+      url: dto.url
     };
   }
 
@@ -51,16 +45,16 @@ export class PortfolioContentMapper {
       role: dto.role,
       headline: dto.headline,
       summary: dto.summary,
-      avatarUrl: dto.avatarUrl,
+      avatarUrl: dto.avatarUrl
     };
   }
 
   private static projectLink(
-    dto: NonNullable<PortfolioContentDto['projects'][number]['repository']>,
+    dto: NonNullable<PortfolioContentDto['projects'][number]['repository']>
   ): ProjectLink {
     return {
       label: dto.label,
-      url: dto.url,
+      url: dto.url
     };
   }
 
@@ -73,7 +67,7 @@ export class PortfolioContentMapper {
       technologies: dto.technologies,
       repository: dto.repository ? this.projectLink(dto.repository) : undefined,
       demo: dto.demo ? this.projectLink(dto.demo) : undefined,
-      featured: dto.featured,
+      featured: dto.featured
     };
   }
 
@@ -83,13 +77,11 @@ export class PortfolioContentMapper {
       name: dto.name,
       category: dto.category,
       level: dto.level,
-      featured: dto.featured,
+      featured: dto.featured
     };
   }
 
-  private static experience(
-    dto: PortfolioContentDto['experiences'][number],
-  ): Experience {
+  private static experience(dto: PortfolioContentDto['experiences'][number]): Experience {
     return {
       id: dto.id,
       company: dto.company,
@@ -98,13 +90,11 @@ export class PortfolioContentMapper {
       endDate: dto.endDate ?? undefined,
       summary: dto.summary,
       achievements: dto.achievements,
-      featured: dto.featured,
+      featured: dto.featured
     };
   }
 
-  private static education(
-    dto: PortfolioContentDto['education'][number],
-  ): Education {
+  private static education(dto: PortfolioContentDto['education'][number]): Education {
     return {
       id: dto.id,
       institution: dto.institution,
@@ -112,7 +102,7 @@ export class PortfolioContentMapper {
       startDate: dto.startDate,
       endDate: dto.endDate ?? undefined,
       summary: dto.summary,
-      featured: dto.featured,
+      featured: dto.featured
     };
   }
 }

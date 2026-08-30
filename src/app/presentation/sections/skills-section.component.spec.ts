@@ -10,13 +10,13 @@ describe('SkillsSectionComponent', () => {
     {
       id: 'skill-1',
       name: 'Angular',
-      featured: true,
+      featured: true
     },
     {
       id: 'skill-2',
       name: 'TypeScript',
-      featured: false,
-    },
+      featured: false
+    }
   ];
 
   const emptySkills: readonly Skill[] = [];
@@ -24,8 +24,8 @@ describe('SkillsSectionComponent', () => {
   it('debería mostrar las skills recibidas', async () => {
     await render(SkillsSectionComponent, {
       componentInputs: {
-        skills,
-      },
+        skills
+      }
     });
 
     expect(screen.getByText('Angular')).toBeTruthy();
@@ -35,8 +35,8 @@ describe('SkillsSectionComponent', () => {
   it('no debería mostrar skills cuando la colección está vacía', async () => {
     await render(SkillsSectionComponent, {
       componentInputs: {
-        skills: emptySkills,
-      },
+        skills: emptySkills
+      }
     });
 
     expect(screen.queryByText('Angular')).toBeNull();

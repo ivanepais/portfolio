@@ -20,7 +20,7 @@ import { ContactSectionComponent } from '../sections/contact-section.component';
     HeroSectionComponent,
     ProjectsSectionComponent,
     SkillsSectionComponent,
-    ContactSectionComponent,
+    ContactSectionComponent
   ],
   template: `
     @if (content(); as portfolio) {
@@ -30,16 +30,14 @@ import { ContactSectionComponent } from '../sections/contact-section.component';
         [footerText]="footerText"
       >
         <app-hero-section [profile]="portfolio.profile" />
-        <app-contact-section
-          [contact]="portfolio.contact"
-        />
+        <app-contact-section [contact]="portfolio.contact" />
         <app-projects-section [projects]="portfolio.projects" />
         <app-skills-section [skills]="portfolio.skills" />
       </app-portfolio-layout>
     } @else {
       <p>Cargando portfolio...</p>
     }
-  `,
+  `
 })
 export class PortfolioPageComponent implements OnInit {
   private readonly portfolioFacade = inject(PortfolioFacade);

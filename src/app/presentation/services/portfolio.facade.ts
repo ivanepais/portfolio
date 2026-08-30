@@ -4,7 +4,7 @@ import { GetPortfolioContentUseCase } from '@application/use-cases/get-portfolio
 import { PortfolioContent } from '@application/ports/portfolio-content.port';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class PortfolioFacade {
   private readonly getPortfolioContentUseCase = inject(GetPortfolioContentUseCase);

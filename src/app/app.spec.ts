@@ -4,13 +4,13 @@ import { App } from './app';
 
 import {
   PORTFOLIO_CONTENT_PORT,
-  PortfolioContentPort,
+  PortfolioContentPort
 } from '@application/ports/portfolio-content.port';
 
 describe('App', () => {
   beforeEach(async () => {
     const portfolioContentPort: PortfolioContentPort = {
-      getPortfolioContent: vi.fn(),
+      getPortfolioContent: vi.fn()
     };
 
     await TestBed.configureTestingModule({
@@ -18,12 +18,12 @@ describe('App', () => {
       providers: [
         {
           provide: PORTFOLIO_CONTENT_PORT,
-          useValue: portfolioContentPort,
-        },
-      ],
+          useValue: portfolioContentPort
+        }
+      ]
     }).compileComponents();
   });
-  
+
   it('should create the app', () => {
     const fixture = TestBed.createComponent(App);
     const app = fixture.componentInstance;

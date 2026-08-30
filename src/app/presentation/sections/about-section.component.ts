@@ -39,27 +39,18 @@ import { Profile } from '@domain/profile.entity';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <section
-      id="about"
-      class="scroll-mt-24 py-12 sm:py-16 lg:py-20"
-    >
+    <section id="about" class="scroll-mt-24 py-12 sm:py-16 lg:py-20">
       <div class="max-w-3xl">
-        <h2
-          class="text-2xl font-semibold tracking-tight text-text sm:text-3xl"
-        >
-          Sobre mí
-        </h2>
+        <h2 class="text-text text-2xl font-semibold tracking-tight sm:text-3xl">Sobre mí</h2>
 
-        <div
-          class="mt-6 space-y-4 text-base leading-7 text-muted sm:text-lg"
-        >
+        <div class="text-muted mt-6 space-y-4 text-base leading-7 sm:text-lg">
           <p>
             {{ profile.summary }}
           </p>
         </div>
       </div>
     </section>
-  `,
+  `
 })
 export class AboutSectionComponent {
   @Input({ required: true })

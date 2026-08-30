@@ -10,32 +10,24 @@ import { BackToTopComponent } from '../sections/back-to-top.component';
 @Component({
   selector: 'app-portfolio-layout',
   standalone: true,
-  imports: [
-    CommonModule, 
-    PortfolioHeaderComponent,
-    BackToTopComponent,
-  ],
+  imports: [CommonModule, PortfolioHeaderComponent, BackToTopComponent],
   template: `
     <div
       id="top"
-      class="mx-auto flex min-h-screen w-full flex-col px-6 py-6 text-text sm:px-8 lg:px-10"
+      class="text-text mx-auto flex min-h-screen w-full flex-col px-6 py-6 sm:px-8 lg:px-10"
     >
+      <app-portfolio-header [profile]="profile" [socialLinks]="socialLinks" />
 
-      <app-portfolio-header
-        [profile]="profile"
-        [socialLinks]="socialLinks"
-      />
-
-      <main class="flex-1 mx-auto">
+      <main class="mx-auto flex-1">
         <ng-content />
       </main>
 
-      <footer class="max-w-5xl mx-auto mt-8 border-t border-border pt-6 text-sm text-muted">
+      <footer class="border-border text-muted mx-auto mt-8 max-w-5xl border-t pt-6 text-sm">
         <p>{{ footerText }}</p>
       </footer>
       <app-back-to-top />
     </div>
-  `,
+  `
 })
 export class PortfolioLayoutComponent {
   @Input({ required: true })

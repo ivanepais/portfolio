@@ -1,12 +1,5 @@
-
 export type SocialPlatformDto =
-  | 'github'
-  | 'linkedin'
-  | 'x'
-  | 'instagram'
-  | 'youtube'
-  | 'website'
-  | 'email';
+  'github' | 'linkedin' | 'x' | 'instagram' | 'youtube' | 'website' | 'email';
 
 export interface SocialLinkDto {
   readonly platform: SocialPlatformDto;

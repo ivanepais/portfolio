@@ -12,25 +12,25 @@ describe('PortfolioHeaderComponent', () => {
     role: 'Frontend Developer',
     headline: 'Test headline',
     summary: 'Test summary',
-    avatarUrl: '/avatar.jpg',
+    avatarUrl: '/avatar.jpg'
   };
 
   const profileWithoutAvatar: Profile = {
     ...profile,
-    avatarUrl: undefined,
+    avatarUrl: undefined
   };
 
   const socialLinks: readonly SocialLink[] = [
     {
       platform: 'github',
       label: 'GitHub',
-      url: 'https://github.com/test',
+      url: 'https://github.com/test'
     },
     {
       platform: 'email',
       label: 'Email',
-      url: 'test@example.com',
-    },
+      url: 'test@example.com'
+    }
   ];
 
   const emptySocialLinks: readonly SocialLink[] = [];
@@ -39,53 +39,47 @@ describe('PortfolioHeaderComponent', () => {
     await render(PortfolioHeaderComponent, {
       componentInputs: {
         profile,
-        socialLinks,
-      },
+        socialLinks
+      }
     });
 
     const avatar = screen.getByRole('img', {
-      name: profile.fullName,
+      name: profile.fullName
     });
 
     expect(avatar.getAttribute('src')).toBe(profile.avatarUrl);
-    
+
     const githubLink = screen.getByRole('link', {
-      name: socialLinks[0].label,
+      name: socialLinks[0].label
     });
 
-    expect(
-      githubLink.getAttribute('href'),
-    ).toBe(socialLinks[0].url);
+    expect(githubLink.getAttribute('href')).toBe(socialLinks[0].url);
 
     const emailLink = screen.getByRole('link', {
-      name: socialLinks[1].label,
+      name: socialLinks[1].label
     });
 
-    expect(
-      emailLink.getAttribute('href'),
-    ).toBe(`mailto:${socialLinks[1].url}`);
+    expect(emailLink.getAttribute('href')).toBe(`mailto:${socialLinks[1].url}`);
 
     const cvLink = screen.getByRole('link', {
-      name: 'CV',
+      name: 'CV'
     });
 
-    expect(
-      cvLink.getAttribute('href'),
-    ).toBe('../../../assets/public/documents/cv.pdf');
+    expect(cvLink.getAttribute('href')).toBe('../../../assets/public/documents/cv.pdf');
   });
 
   it('no debería mostrar el avatar cuando no existe', async () => {
     await render(PortfolioHeaderComponent, {
       componentInputs: {
         profile: profileWithoutAvatar,
-        socialLinks,
-      },
+        socialLinks
+      }
     });
 
     expect(
       screen.queryByRole('img', {
-        name: profile.fullName,
-      }),
+        name: profile.fullName
+      })
     ).toBeNull();
   });
 
@@ -93,20 +87,20 @@ describe('PortfolioHeaderComponent', () => {
     await render(PortfolioHeaderComponent, {
       componentInputs: {
         profile,
-        socialLinks: emptySocialLinks,
-      },
+        socialLinks: emptySocialLinks
+      }
     });
 
     expect(
       screen.queryByRole('navigation', {
-        name: 'Social Networks',
-      }),
+        name: 'Social Networks'
+      })
     ).toBeNull();
 
     expect(
       screen.queryByRole('link', {
-        name: 'CV',
-      }),
+        name: 'CV'
+      })
     ).toBeNull();
   });
 });

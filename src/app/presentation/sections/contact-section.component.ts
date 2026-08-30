@@ -85,16 +85,11 @@ import { Contact } from '@domain/contact.entity';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <section
-      id="contact"
-      class="scroll-mt-20"
-    >
-      <div
-        class="mx-auto max-w-2xl mt-8 rounded-2xl border border-border bg-surface p-6 shadow-sm"
-      >
-        <p class="text-base leading-7 text-muted">
+    <section id="contact" class="scroll-mt-20">
+      <div class="border-border bg-surface mx-auto mt-8 max-w-2xl rounded-2xl border p-6 shadow-sm">
+        <p class="text-muted text-base leading-7">
           <a
-            class="font-medium text-text transition-colors hover:text-muted"
+            class="text-text hover:text-muted font-medium transition-colors"
             [href]="'mailto:' + contact.email"
           >
             {{ contact.email }}
@@ -102,12 +97,12 @@ import { Contact } from '@domain/contact.entity';
         </p>
 
         @if (contact.location) {
-          <p class="mt-2 text-sm text-muted">
+          <p class="text-muted mt-2 text-sm">
             {{ contact.location }}
           </p>
         }
 
-        <p class="mt-4 text-sm font-medium text-text">
+        <p class="text-text mt-4 text-sm font-medium">
           {{
             contact.availableForWork
               ? 'Disponible para nuevas oportunidades'
@@ -116,7 +111,7 @@ import { Contact } from '@domain/contact.entity';
         </p>
       </div>
     </section>
-  `,
+  `
 })
 export class ContactSectionComponent {
   @Input({ required: true })

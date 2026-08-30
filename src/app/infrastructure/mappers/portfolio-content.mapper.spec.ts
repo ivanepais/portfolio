@@ -1,8 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import {
-  PortfolioContentDto,
-} from '../dtos/portfolio-content.dto';
+import { PortfolioContentDto } from '../dtos/portfolio-content.dto';
 
 import { PortfolioContentMapper } from './portfolio-content.mapper';
 
@@ -13,7 +11,7 @@ describe('PortfolioContentMapper', () => {
       role: 'Frontend Developer',
       headline: 'Test headline',
       summary: 'Test summary',
-      avatarUrl: '/avatar.jpg',
+      avatarUrl: '/avatar.jpg'
     },
 
     projects: [
@@ -25,14 +23,14 @@ describe('PortfolioContentMapper', () => {
         technologies: ['Angular', 'TypeScript'],
         repository: {
           label: 'GitHub',
-          url: 'https://github.com/test/project',
+          url: 'https://github.com/test/project'
         },
         demo: {
           label: 'Demo',
-          url: 'https://example.com/project',
+          url: 'https://example.com/project'
         },
-        featured: true,
-      },
+        featured: true
+      }
     ],
 
     skills: [
@@ -41,8 +39,8 @@ describe('PortfolioContentMapper', () => {
         name: 'Angular',
         category: 'Frontend',
         level: 'advanced',
-        featured: true,
-      },
+        featured: true
+      }
     ],
 
     experiences: [
@@ -54,8 +52,8 @@ describe('PortfolioContentMapper', () => {
         endDate: null,
         summary: 'Test experience summary',
         achievements: ['Achievement one'],
-        featured: true,
-      },
+        featured: true
+      }
     ],
 
     education: [
@@ -66,37 +64,35 @@ describe('PortfolioContentMapper', () => {
         startDate: '2020-01',
         endDate: '2024-01',
         summary: 'Test education summary',
-        featured: true,
-      },
+        featured: true
+      }
     ],
 
     socialLinks: [
       {
         platform: 'github',
         label: 'GitHub',
-        url: 'https://github.com/test',
-      },
+        url: 'https://github.com/test'
+      }
     ],
 
     contact: {
       email: 'test@example.com',
       location: 'Argentina',
       availableForWork: true,
-      timezone: 'America/Argentina/Buenos_Aires',
-    },
+      timezone: 'America/Argentina/Buenos_Aires'
+    }
   };
 
   it('debería transformar un PortfolioContentDto a PortfolioContent', () => {
-    const result = PortfolioContentMapper.toDomain(
-      portfolioContentDto,
-    );
+    const result = PortfolioContentMapper.toDomain(portfolioContentDto);
 
     expect(result.profile).toEqual({
       fullName: 'Test User',
       role: 'Frontend Developer',
       headline: 'Test headline',
       summary: 'Test summary',
-      avatarUrl: '/avatar.jpg',
+      avatarUrl: '/avatar.jpg'
     });
 
     expect(result.projects).toEqual([
@@ -108,14 +104,14 @@ describe('PortfolioContentMapper', () => {
         technologies: ['Angular', 'TypeScript'],
         repository: {
           label: 'GitHub',
-          url: 'https://github.com/test/project',
+          url: 'https://github.com/test/project'
         },
         demo: {
           label: 'Demo',
-          url: 'https://example.com/project',
+          url: 'https://example.com/project'
         },
-        featured: true,
-      },
+        featured: true
+      }
     ]);
 
     expect(result.skills).toEqual([
@@ -124,8 +120,8 @@ describe('PortfolioContentMapper', () => {
         name: 'Angular',
         category: 'Frontend',
         level: 'advanced',
-        featured: true,
-      },
+        featured: true
+      }
     ]);
 
     expect(result.experiences).toEqual([
@@ -137,8 +133,8 @@ describe('PortfolioContentMapper', () => {
         endDate: undefined,
         summary: 'Test experience summary',
         achievements: ['Achievement one'],
-        featured: true,
-      },
+        featured: true
+      }
     ]);
 
     expect(result.education).toEqual([
@@ -149,19 +145,18 @@ describe('PortfolioContentMapper', () => {
         startDate: '2020-01',
         endDate: '2024-01',
         summary: 'Test education summary',
-        featured: true,
-      },
+        featured: true
+      }
     ]);
 
     expect(result.socialLinks).toEqual([
       {
         platform: 'github',
         label: 'GitHub',
-        url: 'https://github.com/test',
-      },
-    ]);            
+        url: 'https://github.com/test'
+      }
+    ]);
   });
-
 
   const portfolioContentDtoWithoutOptionals: PortfolioContentDto = {
     ...portfolioContentDto,
@@ -172,8 +167,8 @@ describe('PortfolioContentMapper', () => {
         title: 'Project Without Links',
         description: 'Project description',
         technologies: ['Angular'],
-        featured: false,
-      },
+        featured: false
+      }
     ],
 
     experiences: [
@@ -184,35 +179,31 @@ describe('PortfolioContentMapper', () => {
         startDate: '2024-01',
         endDate: null,
         summary: 'Test experience summary',
-        featured: false,
-      },
-    ],
+        featured: false
+      }
+    ]
   };
 
   it('debería convertir los links opcionales ausentes a undefined', () => {
-    const result = PortfolioContentMapper.toDomain(
-      portfolioContentDtoWithoutOptionals,
-    );
+    const result = PortfolioContentMapper.toDomain(portfolioContentDtoWithoutOptionals);
 
     expect(result.projects[0].repository).toBeUndefined();
     expect(result.projects[0].demo).toBeUndefined();
     expect(result.experiences[0].endDate).toBeUndefined();
     expect(result.experiences[0].achievements).toBeUndefined();
   });
- 
+
   const portfolioContentDtoWithEmptyCollections: PortfolioContentDto = {
     ...portfolioContentDto,
     projects: [],
     skills: [],
     experiences: [],
     education: [],
-    socialLinks: [],
+    socialLinks: []
   };
 
   it('debería conservar las colecciones vacías', () => {
-    const result = PortfolioContentMapper.toDomain(
-      portfolioContentDtoWithEmptyCollections,
-    );
+    const result = PortfolioContentMapper.toDomain(portfolioContentDtoWithEmptyCollections);
 
     expect(result.projects).toEqual([]);
     expect(result.skills).toEqual([]);
@@ -220,4 +211,4 @@ describe('PortfolioContentMapper', () => {
     expect(result.education).toEqual([]);
     expect(result.socialLinks).toEqual([]);
   });
-});  
+});

@@ -292,8 +292,8 @@ import { Skill } from '@domain/skill.entity';
     </span>
 
     <ng-content />
-  `, 
-  standalone: true,
+  `,
+  standalone: true
 })
 class PortfolioLayoutStubComponent {
   @Input({ required: true })
@@ -313,7 +313,7 @@ class PortfolioLayoutStubComponent {
       {{ profile.fullName }}
     </span>
   `,
-  standalone: true,
+  standalone: true
 })
 class HeroSectionStubComponent {
   @Input({ required: true })
@@ -327,7 +327,7 @@ class HeroSectionStubComponent {
       {{ contact.email }}
     </span>
   `,
-  standalone: true,
+  standalone: true
 })
 class ContactSectionStubComponent {
   @Input({ required: true })
@@ -341,7 +341,7 @@ class ContactSectionStubComponent {
       {{ projects.length }}
     </span>
   `,
-  standalone: true,
+  standalone: true
 })
 class ProjectsSectionStubComponent {
   @Input({ required: true })
@@ -355,7 +355,7 @@ class ProjectsSectionStubComponent {
       {{ skills.length }}
     </span>
   `,
-  standalone: true,
+  standalone: true
 })
 class SkillsSectionStubComponent {
   @Input({ required: true })
@@ -369,62 +369,54 @@ describe('PortfolioPageComponent', () => {
       role: 'Frontend Developer',
       headline: 'Test headline',
       summary: 'Test summary',
-      avatarUrl: '/avatar.jpg',
+      avatarUrl: '/avatar.jpg'
     },
     socialLinks: [
       {
         platform: 'github',
         label: 'GitHub',
-        url: 'https://github.com/test',
-      },
+        url: 'https://github.com/test'
+      }
     ],
     contact: {
       email: 'test@example.com',
       location: 'Argentina',
-      availableForWork: true,
+      availableForWork: true
     },
     projects: [],
     skills: [],
     experiences: [],
-    education: [],
+    education: []
   };
 
   const portfolioFacadeStub = {
-    load: vi.fn(),
+    load: vi.fn()
   };
 
   it('debería mostrar el estado de carga inicialmente', async () => {
-    portfolioFacadeStub.load.mockReturnValue(
-      new Promise(() => {}),
-    );
+    portfolioFacadeStub.load.mockReturnValue(new Promise(() => {}));
 
     const { fixture } = await render(PortfolioPageComponent, {
       detectChangesOnRender: false,
       providers: [
         {
           provide: PortfolioFacade,
-          useValue: portfolioFacadeStub,
-        },
-      ],
+          useValue: portfolioFacadeStub
+        }
+      ]
     });
 
     fixture.detectChanges();
 
-    expect(
-      screen.getByText('Cargando portfolio...'),
-    ).toBeTruthy();
+    expect(screen.getByText('Cargando portfolio...')).toBeTruthy();
 
-    expect(
-      portfolioFacadeStub.load,
-    ).toHaveBeenCalledOnce();
+    expect(portfolioFacadeStub.load).toHaveBeenCalledOnce();
   });
 
   it('debería mostrar el portfolio cuando la carga finaliza', async () => {
     portfolioFacadeStub.load.mockClear();
 
-    portfolioFacadeStub.load.mockResolvedValue(
-      portfolioContent,
-    );
+    portfolioFacadeStub.load.mockResolvedValue(portfolioContent);
 
     TestBed.overrideComponent(PortfolioPageComponent, {
       remove: {
@@ -433,8 +425,8 @@ describe('PortfolioPageComponent', () => {
           HeroSectionComponent,
           ContactSectionComponent,
           ProjectsSectionComponent,
-          SkillsSectionComponent,
-        ],
+          SkillsSectionComponent
+        ]
       },
       add: {
         imports: [
@@ -442,68 +434,52 @@ describe('PortfolioPageComponent', () => {
           HeroSectionStubComponent,
           ContactSectionStubComponent,
           ProjectsSectionStubComponent,
-          SkillsSectionStubComponent,
-        ],
-      },
+          SkillsSectionStubComponent
+        ]
+      }
     });
 
     const { fixture } = await render(PortfolioPageComponent, {
       providers: [
         {
           provide: PortfolioFacade,
-          useValue: portfolioFacadeStub,
-        },
-      ],
+          useValue: portfolioFacadeStub
+        }
+      ]
     });
 
     await fixture.whenStable();
-    
-    expect(
-      screen.queryByText('Cargando portfolio...'),
-    ).toBeNull();
 
-    expect(
-      portfolioFacadeStub.load,
-    ).toHaveBeenCalledOnce();
+    expect(screen.queryByText('Cargando portfolio...')).toBeNull();
 
-    expect(
-      screen.getByTestId('portfolio-layout-profile').textContent,
-    ).toContain(portfolioContent.profile.fullName);
+    expect(portfolioFacadeStub.load).toHaveBeenCalledOnce();
 
-    expect(
-      screen.getByTestId('portfolio-layout-social-links').textContent,
-    ).toContain(
-      portfolioContent.socialLinks.length.toString(),
-    );    
-
-    expect(
-      screen.getByTestId('portfolio-layout-footer-text').textContent,
-    ).toContain(
-      '© 2026 Tu Nombre. Todos los derechos reservados.',
+    expect(screen.getByTestId('portfolio-layout-profile').textContent).toContain(
+      portfolioContent.profile.fullName
     );
 
-    expect(
-      screen.getByTestId('hero-profile').textContent,
-    ).toContain(
-      portfolioContent.profile.fullName,
+    expect(screen.getByTestId('portfolio-layout-social-links').textContent).toContain(
+      portfolioContent.socialLinks.length.toString()
     );
 
-    expect(
-      screen.getByTestId('contact-email').textContent,
-    ).toContain(
-      portfolioContent.contact.email,
+    expect(screen.getByTestId('portfolio-layout-footer-text').textContent).toContain(
+      '© 2026 Tu Nombre. Todos los derechos reservados.'
     );
 
-    expect(
-      screen.getByTestId('projects-count').textContent,
-    ).toContain(
-      portfolioContent.projects.length.toString(),
+    expect(screen.getByTestId('hero-profile').textContent).toContain(
+      portfolioContent.profile.fullName
     );
 
-    expect(
-      screen.getByTestId('skills-count').textContent,
-    ).toContain(
-      portfolioContent.skills.length.toString(),
+    expect(screen.getByTestId('contact-email').textContent).toContain(
+      portfolioContent.contact.email
     );
-  });  
+
+    expect(screen.getByTestId('projects-count').textContent).toContain(
+      portfolioContent.projects.length.toString()
+    );
+
+    expect(screen.getByTestId('skills-count').textContent).toContain(
+      portfolioContent.skills.length.toString()
+    );
+  });
 });

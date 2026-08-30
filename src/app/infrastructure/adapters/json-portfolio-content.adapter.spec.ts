@@ -1,16 +1,9 @@
 import { TestBed } from '@angular/core/testing';
-import {
-  provideHttpClient,
-} from '@angular/common/http';
-import {
-  HttpTestingController,
-  provideHttpClientTesting,
-} from '@angular/common/http/testing';
+import { provideHttpClient } from '@angular/common/http';
+import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { describe, beforeEach, afterEach, it, expect } from 'vitest';
 
-import {
-  PortfolioContentDto,
-} from '../dtos/portfolio-content.dto';
+import { PortfolioContentDto } from '../dtos/portfolio-content.dto';
 
 import { JsonPortfolioContentAdapter } from './json-portfolio-content.adapter';
 
@@ -20,17 +13,12 @@ describe('JsonPortfolioContentAdapter', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [
-        provideHttpClient(),
-        provideHttpClientTesting(),
-      ],
+      providers: [provideHttpClient(), provideHttpClientTesting()]
     });
 
     adapter = TestBed.inject(JsonPortfolioContentAdapter);
 
-    httpTestingController = TestBed.inject(
-      HttpTestingController,
-    );
+    httpTestingController = TestBed.inject(HttpTestingController);
   });
 
   afterEach(() => {
@@ -43,7 +31,7 @@ describe('JsonPortfolioContentAdapter', () => {
       role: 'Frontend Developer',
       headline: 'Test headline',
       summary: 'Test summary',
-      avatarUrl: '/avatar.jpg',
+      avatarUrl: '/avatar.jpg'
     },
 
     projects: [
@@ -55,14 +43,14 @@ describe('JsonPortfolioContentAdapter', () => {
         technologies: ['Angular', 'TypeScript'],
         repository: {
           label: 'GitHub',
-          url: 'https://github.com/test/project',
+          url: 'https://github.com/test/project'
         },
         demo: {
           label: 'Demo',
-          url: 'https://example.com/project',
+          url: 'https://example.com/project'
         },
-        featured: true,
-      },
+        featured: true
+      }
     ],
 
     skills: [
@@ -71,8 +59,8 @@ describe('JsonPortfolioContentAdapter', () => {
         name: 'Angular',
         category: 'Frontend',
         level: 'advanced',
-        featured: true,
-      },
+        featured: true
+      }
     ],
 
     experiences: [
@@ -84,8 +72,8 @@ describe('JsonPortfolioContentAdapter', () => {
         endDate: null,
         summary: 'Test experience summary',
         achievements: ['Achievement one'],
-        featured: true,
-      },
+        featured: true
+      }
     ],
 
     education: [
@@ -96,35 +84,33 @@ describe('JsonPortfolioContentAdapter', () => {
         startDate: '2020-01',
         endDate: '2024-01',
         summary: 'Test education summary',
-        featured: true,
-      },
+        featured: true
+      }
     ],
 
     socialLinks: [
       {
         platform: 'github',
         label: 'GitHub',
-        url: 'https://github.com/test',
-      },
+        url: 'https://github.com/test'
+      }
     ],
 
     contact: {
       email: 'test@example.com',
       location: 'Argentina',
       availableForWork: true,
-      timezone: 'America/Argentina/Buenos_Aires',
-    },
+      timezone: 'America/Argentina/Buenos_Aires'
+    }
   };
 
   it('debería realizar un GET al contenido del portfolio', async () => {
     const promise = adapter.getPortfolioContent();
 
-    const request = httpTestingController.expectOne(
-      'assets/content/portfolio-content.json',
-    );
+    const request = httpTestingController.expectOne('assets/content/portfolio-content.json');
 
     expect(request.request.method).toBe('GET');
-    
+
     request.flush(portfolioContentDto);
 
     const result = await promise;
@@ -135,7 +121,7 @@ describe('JsonPortfolioContentAdapter', () => {
         role: 'Frontend Developer',
         headline: 'Test headline',
         summary: 'Test summary',
-        avatarUrl: '/avatar.jpg',
+        avatarUrl: '/avatar.jpg'
       },
 
       projects: [
@@ -147,14 +133,14 @@ describe('JsonPortfolioContentAdapter', () => {
           technologies: ['Angular', 'TypeScript'],
           repository: {
             label: 'GitHub',
-            url: 'https://github.com/test/project',
+            url: 'https://github.com/test/project'
           },
           demo: {
             label: 'Demo',
-            url: 'https://example.com/project',
+            url: 'https://example.com/project'
           },
-          featured: true,
-        },
+          featured: true
+        }
       ],
 
       skills: [
@@ -163,8 +149,8 @@ describe('JsonPortfolioContentAdapter', () => {
           name: 'Angular',
           category: 'Frontend',
           level: 'advanced',
-          featured: true,
-        },
+          featured: true
+        }
       ],
 
       experiences: [
@@ -176,8 +162,8 @@ describe('JsonPortfolioContentAdapter', () => {
           endDate: undefined,
           summary: 'Test experience summary',
           achievements: ['Achievement one'],
-          featured: true,
-        },
+          featured: true
+        }
       ],
 
       education: [
@@ -188,37 +174,35 @@ describe('JsonPortfolioContentAdapter', () => {
           startDate: '2020-01',
           endDate: '2024-01',
           summary: 'Test education summary',
-          featured: true,
-        },
+          featured: true
+        }
       ],
 
       socialLinks: [
         {
           platform: 'github',
           label: 'GitHub',
-          url: 'https://github.com/test',
-        },
+          url: 'https://github.com/test'
+        }
       ],
 
       contact: {
         email: 'test@example.com',
         location: 'Argentina',
         availableForWork: true,
-        timezone: 'America/Argentina/Buenos_Aires',
-      },
+        timezone: 'America/Argentina/Buenos_Aires'
+      }
     });
   });
 
   it('debería propagar un error HTTP', async () => {
     const promise = adapter.getPortfolioContent();
 
-    const request = httpTestingController.expectOne(
-      'assets/content/portfolio-content.json', 
-    );
-    
+    const request = httpTestingController.expectOne('assets/content/portfolio-content.json');
+
     request.flush(null, {
       status: 500,
-      statusText: 'Internal Server Error',
+      statusText: 'Internal Server Error'
     });
 
     await expect(promise).rejects.toThrow();
