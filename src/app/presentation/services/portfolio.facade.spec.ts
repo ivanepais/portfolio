@@ -29,13 +29,13 @@ describe('PortfolioFacade', () => {
     facade = TestBed.inject(PortfolioFacade);
   });
 
-  it('debería ejecutar el caso de uso al cargar el contenido', () => {
+  it('execute the use case when loading the content', () => {
     facade.load();
 
     expect(execute).toHaveBeenCalledOnce();
   });
 
-  it('debería devolver el contenido obtenido por el caso de uso', async () => {
+  it('return the content obtained by the use case', async () => {
     const portfolioContent = {} as PortfolioContent;
 
     execute.mockResolvedValue(portfolioContent);
@@ -45,8 +45,8 @@ describe('PortfolioFacade', () => {
     expect(result).toBe(portfolioContent);
   });
 
-  it('debería propagar el error del caso de uso', async () => {
-    const error = new Error('Error al obtener el contenido');
+  it('should propagate the use case error', async () => {
+    const error = new Error('Error retrieving content');
 
     execute.mockRejectedValue(error);
 

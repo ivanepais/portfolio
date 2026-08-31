@@ -21,7 +21,7 @@ describe('SkillsSectionComponent', () => {
 
   const emptySkills: readonly Skill[] = [];
 
-  it('debería mostrar las skills recibidas', async () => {
+  it('show the skills received', async () => {
     await render(SkillsSectionComponent, {
       componentInputs: {
         skills
@@ -32,7 +32,7 @@ describe('SkillsSectionComponent', () => {
     expect(screen.getByText('TypeScript')).toBeTruthy();
   });
 
-  it('no debería mostrar skills cuando la colección está vacía', async () => {
+  it('do not show skills when the collection is empty.', async () => {
     await render(SkillsSectionComponent, {
       componentInputs: {
         skills: emptySkills

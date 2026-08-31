@@ -43,7 +43,7 @@ class BackToTopStubComponent {}
   selector: 'app-portfolio-layout-host',
   template: `
     <app-portfolio-layout [profile]="profile" [socialLinks]="socialLinks" [footerText]="footerText">
-      <p>Contenido proyectado</p>
+      <p>Projected content</p>
     </app-portfolio-layout>
   `,
   standalone: true,
@@ -79,7 +79,7 @@ describe('PortfolioLayoutComponent', () => {
 
   const footerText = '© 2026 Test User';
 
-  it('debería componer el layout', async () => {
+  it('compose the layout', async () => {
     TestBed.overrideComponent(PortfolioLayoutComponent, {
       remove: {
         imports: [PortfolioHeaderComponent, BackToTopComponent]
@@ -107,7 +107,7 @@ describe('PortfolioLayoutComponent', () => {
 
     expect(screen.getByTestId('back-to-top-stub')).toBeTruthy();
 
-    expect(screen.getByText('Contenido proyectado')).toBeTruthy();
+    expect(screen.getByText('Projected content')).toBeTruthy();
 
     expect(screen.getByText(footerText)).toBeTruthy();
   });

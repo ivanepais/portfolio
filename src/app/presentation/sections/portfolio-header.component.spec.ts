@@ -35,7 +35,7 @@ describe('PortfolioHeaderComponent', () => {
 
   const emptySocialLinks: readonly SocialLink[] = [];
 
-  it('debería mostrar la información del header', async () => {
+  it('display header information', async () => {
     await render(PortfolioHeaderComponent, {
       componentInputs: {
         profile,
@@ -68,7 +68,7 @@ describe('PortfolioHeaderComponent', () => {
     expect(cvLink.getAttribute('href')).toBe('../../../assets/public/documents/cv.pdf');
   });
 
-  it('no debería mostrar el avatar cuando no existe', async () => {
+  it('do not show the avatar when it does not exist', async () => {
     await render(PortfolioHeaderComponent, {
       componentInputs: {
         profile: profileWithoutAvatar,
@@ -83,7 +83,7 @@ describe('PortfolioHeaderComponent', () => {
     ).toBeNull();
   });
 
-  it('no debería mostrar las redes sociales ni el CV cuando no hay links', async () => {
+  it('do not display social media profiles or your CV when there are no links.', async () => {
     await render(PortfolioHeaderComponent, {
       componentInputs: {
         profile,

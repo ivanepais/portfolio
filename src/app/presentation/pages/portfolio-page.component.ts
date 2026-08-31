@@ -35,7 +35,7 @@ import { ContactSectionComponent } from '../sections/contact-section.component';
         <app-skills-section [skills]="portfolio.skills" />
       </app-portfolio-layout>
     } @else {
-      <p>Cargando portfolio...</p>
+      <p>Loading portfolio...</p>
     }
   `
 })
@@ -44,7 +44,7 @@ export class PortfolioPageComponent implements OnInit {
 
   readonly content = signal<PortfolioContent | null>(null);
 
-  readonly footerText = '© 2026 Tu Nombre. Todos los derechos reservados.';
+  readonly footerText = '© 2026 Your Name. All rights reserved.';
 
   async ngOnInit(): Promise<void> {
     const portfolio = await this.portfolioFacade.load();

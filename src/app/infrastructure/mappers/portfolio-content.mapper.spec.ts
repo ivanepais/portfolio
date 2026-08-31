@@ -84,7 +84,7 @@ describe('PortfolioContentMapper', () => {
     }
   };
 
-  it('debería transformar un PortfolioContentDto a PortfolioContent', () => {
+  it('transform a PortfolioContentDto to PortfolioContent', () => {
     const result = PortfolioContentMapper.toDomain(portfolioContentDto);
 
     expect(result.profile).toEqual({
@@ -184,7 +184,7 @@ describe('PortfolioContentMapper', () => {
     ]
   };
 
-  it('debería convertir los links opcionales ausentes a undefined', () => {
+  it('convert missing optional links to undefined', () => {
     const result = PortfolioContentMapper.toDomain(portfolioContentDtoWithoutOptionals);
 
     expect(result.projects[0].repository).toBeUndefined();
@@ -202,7 +202,7 @@ describe('PortfolioContentMapper', () => {
     socialLinks: []
   };
 
-  it('debería conservar las colecciones vacías', () => {
+  it('preserve empty collections', () => {
     const result = PortfolioContentMapper.toDomain(portfolioContentDtoWithEmptyCollections);
 
     expect(result.projects).toEqual([]);

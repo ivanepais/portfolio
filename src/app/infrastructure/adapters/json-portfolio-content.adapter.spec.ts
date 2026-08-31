@@ -104,7 +104,7 @@ describe('JsonPortfolioContentAdapter', () => {
     }
   };
 
-  it('debería realizar un GET al contenido del portfolio', async () => {
+  it('perform get to portfolio content', async () => {
     const promise = adapter.getPortfolioContent();
 
     const request = httpTestingController.expectOne('assets/content/portfolio-content.json');
@@ -195,7 +195,7 @@ describe('JsonPortfolioContentAdapter', () => {
     });
   });
 
-  it('debería propagar un error HTTP', async () => {
+  it('propagate an HTTP error', async () => {
     const promise = adapter.getPortfolioContent();
 
     const request = httpTestingController.expectOne('assets/content/portfolio-content.json');

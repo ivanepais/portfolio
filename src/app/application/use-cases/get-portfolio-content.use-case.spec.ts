@@ -5,7 +5,7 @@ import { PortfolioContent, PortfolioContentPort } from '../ports/portfolio-conte
 import { GetPortfolioContentUseCase } from './get-portfolio-content.use-case';
 
 describe('GetPortfolioContentUseCase', () => {
-  it('debería obtener el contenido a través del puerto', async () => {
+  it('obtain the content through the port', async () => {
     const portfolioContent: PortfolioContent = {
       profile: {
         fullName: 'Test User',
@@ -82,8 +82,8 @@ describe('GetPortfolioContentUseCase', () => {
     expect(getPortfolioContent).toHaveBeenCalledOnce();
   });
 
-  it('debería propagar el error del puerto', async () => {
-    const error = new Error('Error al obtener el portfolio');
+  it('propagate port error', async () => {
+    const error = new Error('Error retrieving portfolio');
 
     const getPortfolioContent = vi.fn().mockRejectedValue(error);
 

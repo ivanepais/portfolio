@@ -34,7 +34,7 @@ describe('ProjectsSectionComponent', () => {
 
   const emptyProjects: readonly Project[] = [];
 
-  it('debería mostrar los datos del proyecto', async () => {
+  it('show project data', async () => {
     await render(ProjectsSectionComponent, {
       componentInputs: {
         projects
@@ -64,7 +64,7 @@ describe('ProjectsSectionComponent', () => {
     expect(demoLink.getAttribute('href')).toBe(projects[0].demo!.url);
   });
 
-  it('no debería mostrar los links opcionales cuando no existen', async () => {
+  it('do not show optional links when they do not exist', async () => {
     await render(ProjectsSectionComponent, {
       componentInputs: {
         projects: [projectWithoutLinks]
@@ -76,7 +76,7 @@ describe('ProjectsSectionComponent', () => {
     expect(screen.queryByRole('link', { name: 'Demo' })).toBeNull();
   });
 
-  it('no debería mostrar proyectos cuando la colección está vacía', async () => {
+  it('do not show projects when the collection is empty.', async () => {
     await render(ProjectsSectionComponent, {
       componentInputs: {
         projects: emptyProjects

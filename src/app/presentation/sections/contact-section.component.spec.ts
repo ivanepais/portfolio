@@ -12,7 +12,7 @@ describe('ContactSectionComponent', () => {
     availableForWork: true
   };
 
-  it('debería mostrar la información de contacto', async () => {
+  it('display contact information', async () => {
     await render(ContactSectionComponent, {
       componentInputs: {
         contact
@@ -30,7 +30,7 @@ describe('ContactSectionComponent', () => {
     expect(location).toBeTruthy();
   });
 
-  it('no debería mostrar la ubicación cuando no está disponible', async () => {
+  it('do not show location when unavailable', async () => {
     await render(ContactSectionComponent, {
       componentInputs: {
         contact: {
@@ -43,17 +43,17 @@ describe('ContactSectionComponent', () => {
     expect(screen.queryByText(contact.location!)).toBeNull();
   });
 
-  it('debería indicar que está disponible para nuevas oportunidades', async () => {
+  it('indicate that you are available for new opportunities', async () => {
     await render(ContactSectionComponent, {
       componentInputs: {
         contact
       }
     });
 
-    expect(screen.getByText('Disponible para nuevas oportunidades')).toBeTruthy();
+    expect(screen.getByText('Available for new opportunities')).toBeTruthy();
   });
 
-  it('debería indicar que no está disponible actualmente', async () => {
+  it('indicate that it is currently unavailable.', async () => {
     await render(ContactSectionComponent, {
       componentInputs: {
         contact: {
@@ -63,6 +63,6 @@ describe('ContactSectionComponent', () => {
       }
     });
 
-    expect(screen.getByText('No disponible actualmente')).toBeTruthy();
+    expect(screen.getByText('Not currently available')).toBeTruthy();
   });
 });

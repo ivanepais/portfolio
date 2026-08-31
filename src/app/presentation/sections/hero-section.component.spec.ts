@@ -13,7 +13,7 @@ describe('HeroSectionComponent', () => {
     summary: 'Test summary'
   };
 
-  it('debería mostrar el nombre del perfil', async () => {
+  it('show profile name', async () => {
     await render(HeroSectionComponent, {
       componentInputs: {
         profile
@@ -23,7 +23,7 @@ describe('HeroSectionComponent', () => {
     expect(screen.getByRole('heading', { name: profile.fullName })).toBeTruthy();
   });
 
-  it('debería mostrar el rol del perfil', async () => {
+  it('show the role of the profile', async () => {
     await render(HeroSectionComponent, {
       componentInputs: {
         profile
@@ -33,7 +33,7 @@ describe('HeroSectionComponent', () => {
     expect(screen.getByText(profile.role)).toBeTruthy();
   });
 
-  it('debería mostrar el headline del perfil', async () => {
+  it('show profile headline', async () => {
     await render(HeroSectionComponent, {
       componentInputs: {
         profile
@@ -43,7 +43,7 @@ describe('HeroSectionComponent', () => {
     expect(screen.getByText(profile.headline)).toBeTruthy();
   });
 
-  it('debería mostrar el resumen del perfil', async () => {
+  it('show profile summary', async () => {
     await render(HeroSectionComponent, {
       componentInputs: {
         profile

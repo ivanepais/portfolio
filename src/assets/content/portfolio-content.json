@@ -1,57 +1,73 @@
 {
   "profile": {
-    "fullName": "Tu Nombre",
+    "fullName": "Your Name",
     "role": "Software Developer",
-    "headline": "Construyo interfaces simples, claras y mantenibles.",
-    "summary": "Desarrollo porfolios, apps web y componentes con foco en calidad, escalabilidad y buena experiencia de usuario.",
+    "headline": "I build simple, clear, and maintainable interfaces.",
+    "summary": "I develop web apps with a focus on quality, scalability, and a good user experience..",
     "avatarUrl": "/assets/images/avatar.jpg"
   },
   "projects": [
     {
+      "id": "project-4",
+      "title": "Python BTC Bot",
+      "description": "Application to get the BTC price in real time.",
+      "imageUrl": "/assets/images/projects/todo-app.png",
+      "technologies": ["Python", "MyPy", "Pytest"],
+      "repository": {
+        "label": "GitHub",
+        "url": "https://github.com/youruser/todo-app"
+      },
+      "demo": {
+        "label": "Demo",
+        "url": "https://your-demo.com"
+      },
+      "featured": true
+    },
+    {
       "id": "project-3",
-      "title": "Spend manager",
-      "description": "Aplicación para gestionar gastos con arquitectura limpia y componentes reutilizables.",
+      "title": "Expense Manager",
+      "description": "Application for managing expenses.",
       "imageUrl": "/assets/images/projects/todo-app.png",
       "technologies": ["NestJS", "TypeScript", "Swagger", "Jest"],
       "repository": {
         "label": "GitHub",
-        "url": "https://github.com/tuusuario/todo-app"
+        "url": "https://github.com/youruser/todo-app"
       },
       "demo": {
         "label": "Demo",
-        "url": "https://tu-demo.com"
+        "url": "https://your-demo.com"
       },
       "featured": true
     },
     {
       "id": "project-2",
       "title": "Portfolio",
-      "description": "Aplicación para gestionar proyectos con arquitectura limpia y componentes reutilizables.",
+      "description": " Simple portfolio app with clean architecture and reusable components.",
       "imageUrl": "/assets/images/projects/todo-app.png",
       "technologies": ["Angular", "TypeScript", "Tailwind", "Vitest"],
       "repository": {
         "label": "GitHub",
-        "url": "https://github.com/tuusuario/todo-app"
+        "url": "https://github.com/youruser/todo-app"
       },
       "demo": {
         "label": "Demo",
-        "url": "https://tu-demo.com"
+        "url": "https://your-demo.com"
       },
       "featured": true
     },
     {
       "id": "project-1",
       "title": "Todo App",
-      "description": "Aplicación para gestionar tareas con arquitectura limpia y componentes reutilizables.",
+      "description": "Application for managing daily tasks with clean architecture and reusable components.",
       "imageUrl": "/assets/images/projects/todo-app.png",
       "technologies": ["TypeScript", "React", "CSS/StyledComponents", "Vitest", "RTL"],
       "repository": {
         "label": "GitHub",
-        "url": "https://github.com/tuusuario/todo-app"
+        "url": "https://github.com/youruser/todo-app"
       },
       "demo": {
         "label": "Demo",
-        "url": "https://tu-demo.com"
+        "url": "https://your-demo.com"
       },
       "featured": true
     }
@@ -114,6 +130,13 @@
       "featured": true
     },
     {
+      "id": "skill-testing",
+      "name": "Testing",
+      "category": "Backend",
+      "level": "advanced",
+      "featured": true
+    },
+    {
       "id": "skill-eng",
       "name": "English",
       "category": "Backend",
@@ -128,10 +151,10 @@
       "role": "Frontend Developer",
       "startDate": "2024-01",
       "endDate": null,
-      "summary": "Desarrollo de interfaces y componentes reutilizables.",
+      "summary": "Development of reusable interfaces and components.",
       "achievements": [
-        "Mejoré la mantenibilidad del sistema de UI",
-        "Reduje duplicación de código"
+        "I improved the maintainability of the UI system",
+        "I reduced code duplication"
       ],
       "featured": true
     }
@@ -139,11 +162,11 @@
   "education": [
     {
       "id": "edu-1",
-      "institution": "Instituto / Universidad",
-      "degree": "Carrera o curso",
+      "institution": "Institute / University",
+      "degree": "Career or course",
       "startDate": "2022-01",
       "endDate": "2023-12",
-      "summary": "Formación orientada a desarrollo web.",
+      "summary": "Web development training.",
       "featured": false
     }
   ],
@@ -151,16 +174,16 @@
     {
       "platform": "github",
       "label": "GitHub",
-      "url": "https://github.com/tuusuario"
+      "url": "https://github.com/youruser"
     },
     {
       "platform": "linkedin",
       "label": "LinkedIn",
-      "url": "https://linkedin.com/in/tuusuario"
+      "url": "https://linkedin.com/in/youruser"
     }
   ],
   "contact": {
-    "email": "tuemail@correo.com",
+    "email": "youremail@correo.com",
     "location": "Argentina",
     "availableForWork": true,
     "timezone": "America/Argentina/Buenos_Aires"
