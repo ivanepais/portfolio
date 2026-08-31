@@ -12,7 +12,7 @@ import { Profile } from '@domain/profile.entity';
       id="hero"
       class="mx-auto max-w-2xl scroll-mt-20 bg-[url('/assets/images/hero-background.svg')] bg-contain bg-right bg-no-repeat pt-8"
     >
-      <p class="text-muted mb-4 text-sm font-medium tracking-[0.3em] uppercase">Hola, soy</p>
+      <p class="text-muted mb-4 text-sm font-medium tracking-[0.3em] uppercase">Hello, I am</p>
 
       <h1 class="text-text text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
         {{ profile.fullName }}

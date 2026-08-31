@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, inject, signal, effect } from '@angular/core';
+import { Component, OnInit, inject, signal } from '@angular/core';
 
 import { PortfolioFacade } from '../services/portfolio.facade';
 import { PortfolioContent } from '@application/ports/portfolio-content.port';
