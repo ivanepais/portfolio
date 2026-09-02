@@ -1,5 +1,3 @@
-# Portfolio
-
 <p align="center">
   <a href="https://ivanepais.github.io/portfolio/">
     <img src=".github/assets/github-banner.svg" alt="portfolio app Banner" width="100%">
