@@ -32,7 +32,7 @@ jobs:
         run: npm ci # Clean and strict installation based on package-lock.json
 
       - name: 🧪 Run unit tests
-        run: npx ng test --watch=false --browsers=ChromeHeadless
+        run: npx ng test --watch=false
 
       - name: 🏗️ Compile application (Build)
         run: npx ng build
