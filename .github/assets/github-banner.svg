@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 450" width="100%" height="100%">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap');
+      
+      * { font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; }
+      
+      .title { font-size: 54px; font-weight: 800; fill: #FFFFFF; letter-spacing: -1px; }
+      .description { font-size: 20px; font-weight: 400; fill: #94A3B8; line-height: 1.5; }
+      
+      /* Badges */
+      .badge-bg { fill: #1E293B; stroke: #334155; stroke-width: 1; rx: 8px; }
+      .badge-text { font-size: 13px; font-weight: 700; letter-spacing: 1px; }
+      
+      /* App Window Mockup */
+      .window-bg { fill: #0B0F17; stroke: #1E293B; stroke-width: 2; rx: 16px; }
+      .window-header { fill: #111827; }
+      .url-bar { fill: #1E293B; rx: 6px; }
+      .url-text { font-size: 11px; fill: #64748B; font-weight: 600; text-anchor: middle; }
+      
+      /* UI Portfolio Inside Mockup */
+      .card-bg { fill: #162032; stroke: #2A365C; stroke-width: 1.5; rx: 10px; }
+      .text-sub { font-size: 10px; font-weight: 700; fill: #818CF8; letter-spacing: 1.5px; }
+      .text-name { font-size: 24px; font-weight: 800; fill: #B497D6; }
+      .text-role { font-size: 13px; font-weight: 600; fill: #E2E8F0; }
+      .text-card-title { font-size: 13px; font-weight: 700; fill: #A78BFA; }
+      .text-card-desc { font-size: 10px; fill: #94A3B8; }
+      
+      /* Heart Animation inside UI */
+      .heart-icon {
+        fill: none;
+        stroke: #B497D6;
+        stroke-width: 1.8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        opacity: 0.85;
+      }
+    </style>
+  </defs>
+
+  <!-- Background Banner -->
+  <rect width="1200" height="450" fill="#0A0E17" rx="0" />
+
+  <!-- Project info -->
+  <g transform="translate(70, 0)">
+    <!-- Título -->
+    <text x="0" y="150" class="title">Portfolio</text>
+    
+    <!-- Descripción -->
+    <text x="0" y="200" class="description">A simple portfolio app to help people get to know you.</text>
+    <text x="0" y="230" class="description">Extremely customizable.</text>
+    
+    <!-- Tech Badges -->
+    <!-- Badge: ANGULAR -->
+    <g transform="translate(0, 280)">
+      <rect width="105" height="36" class="badge-bg" />
+      <text x="52.5" y="23" class="badge-text" fill="#38BDF8" text-anchor="middle">ANGULAR</text>
+    </g>
+
+    <!-- Badge: TYPESCRIPT -->
+    <g transform="translate(120, 280)">
+      <rect width="125" height="36" class="badge-bg" />
+      <text x="62.5" y="23" class="badge-text" fill="#60A5FA" text-anchor="middle">TYPESCRIPT</text>
+    </g>
+
+    <!-- Badge: TAILWIND -->
+    <g transform="translate(260, 280)">
+      <rect width="110" height="36" class="badge-bg" />
+      <text x="55" y="23" class="badge-text" fill="#38BDF8" text-anchor="middle">TAILWIND</text>
+    </g>
+
+    <!-- Badge: VITEST -->
+    <g transform="translate(385, 280)">
+      <rect width="90" height="36" class="badge-bg" />
+      <text x="45" y="23" class="badge-text" fill="#FACC15" text-anchor="middle">VITEST</text>
+    </g>
+  </g>
+
+  <!-- Mockup -->
+  <g transform="translate(570, 40)">
+    <!-- Browser window -->
+    <rect width="560" height="370" class="window-bg" />
+    
+    <!-- Top task nav -->
+    <path d="M 0,16 A 16,16 0 0,1 16,0 L 544,0 A 16,16 0 0,1 560,16 L 560,42 L 0,42 Z" class="window-header" />
+    <line x1="0" y1="42" x2="560" y2="42" stroke="#1E293B" stroke-width="1" />
+    
+    <!-- Buttons (Red, Yellow, Green) -->
+    <circle cx="24" cy="21" r="5" fill="#EF4444" />
+    <circle cx="40" cy="21" r="5" fill="#F59E0B" />
+    <circle cx="56" cy="21" r="5" fill="#10B981" />
+    
+    <!-- URL nav -->
+    <rect x="180" y="11" width="200" height="20" class="url-bar" />
+    <text x="280" y="25" class="url-text">localhost:3000</text>
+
+    <!-- Mockup content -->
+    <!-- Header App (Avatar + Nav Links) -->
+    <g transform="translate(30, 60)">
+      <!-- Mini Avatar -->
+      <circle cx="14" cy="14" r="12" fill="none" stroke="#E2E8F0" stroke-width="2" />
+      <path d="M 8,22 A 7,7 0 0,1 20,22" fill="none" stroke="#E2E8F0" stroke-width="2" />
+      
+      <!-- header buttons (GitHub, LinkedIn, CV) -->
+      <rect x="350" y="4" width="42" height="20" rx="10" fill="none" stroke="#334155" stroke-width="1" />
+      <rect x="400" y="4" width="48" height="20" rx="10" fill="none" stroke="#334155" stroke-width="1" />
+      <rect x="456" y="4" width="32" height="20" rx="10" fill="none" stroke="#334155" stroke-width="1" />
+    </g>
+
+    <!-- Hero Section -->
+    <g transform="translate(30, 110)">
+      <text x="0" y="12" class="text-sub">HELLO, I AM</text>
+      <text x="0" y="42" class="text-name">Your Name</text>
+      <text x="0" y="62" class="text-role">Software Developer</text>
+      
+      <!-- Heart -->
+      <g transform="translate(180, 20)">
+        <svg width="40" height="40" viewBox="0 0 24 24">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" class="heart-icon"/>
+        </svg>
+      </g>
+    </g>
+
+    <!-- Contact card -->
+    <g transform="translate(30, 190)">
+      <rect width="500" height="50" class="card-bg" />
+      <text x="18" y="22" font-size="11" font-weight="700" fill="#A78BFA">youremail@correo.com</text>
+      <text x="18" y="38" font-size="10" fill="#64748B">Argentina · Available for new opportunities</text>
+    </g>
+
+    <!-- Projects grid -->
+    <!-- Card 1: Python BTC Bot -->
+    <g transform="translate(30, 252)">
+      <rect width="242" height="80" class="card-bg" />
+      <text x="16" y="24" class="text-card-title">Python BTC Bot</text>
+      <text x="16" y="42" class="text-card-desc">Application to get BTC price</text>
+      <text x="16" y="56" class="text-card-desc">in real time.</text>
+    </g>
+
+    <!-- Card 2: Expense Manager -->
+    <g transform="translate(288, 252)">
+      <rect width="242" height="80" class="card-bg" />
+      <text x="16" y="24" class="text-card-title">Expense Manager</text>
+      <text x="16" y="42" class="text-card-desc">Application for managing</text>
+      <text x="16" y="56" class="text-card-desc">expenses.</text>
+    </g>
+  </g>
+</svg>

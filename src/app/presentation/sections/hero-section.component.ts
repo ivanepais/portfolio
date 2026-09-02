@@ -10,7 +10,7 @@ import { Profile } from '@domain/profile.entity';
   template: `
     <section
       id="hero"
-      class="mx-auto max-w-2xl scroll-mt-20 bg-[url('/assets/images/hero-background.svg')] bg-contain bg-right bg-no-repeat pt-8"
+      class="mx-auto max-w-2xl scroll-mt-20 bg-[url('assets/images/hero-background.svg')] bg-[right_top_0.2rem] bg-[size:350px_auto] md:bg-[size:420px_auto] bg-no-repeat pt-8"
     >
       <p class="text-muted mb-4 text-sm font-medium tracking-[0.3em] uppercase">Hello, I am</p>
 

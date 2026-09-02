@@ -42,7 +42,7 @@
     {
       "id": "project-2",
       "title": "Portfolio",
-      "description": " Simple portfolio app with clean architecture and reusable components.",
+      "description": "Simple portfolio app with clean architecture and reusable components.",
       "imageUrl": "/assets/images/projects/todo-app.png",
       "technologies": ["Angular", "TypeScript", "Tailwind", "Vitest"],
       "repository": {
