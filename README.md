@@ -76,7 +76,7 @@ Start the local server to view and test the application in real time in your bro
 ng serve
 ```   
 
-5. **Build: haz tu propia versión**
+5. **Build:**
 You can build your version to run on a server.
 
 ```sh
