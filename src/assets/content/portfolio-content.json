@@ -1,57 +1,41 @@
 {
   "profile": {
-    "fullName": "Your Name",
-    "role": "Software Developer",
-    "headline": "I build simple, clear, and maintainable interfaces.",
-    "summary": "I develop web apps with a focus on quality, scalability, and a good user experience..",
+    "fullName": "Iván Pais",
+    "role": "Software Developer | Help Desk | Cybersecurity",
+    "headline": "I believe in integrity as a value.",
+    "summary": "I am interested in architecture, product, and business.",
     "avatarUrl": "assets/images/avatar.svg"
   },
   "projects": [
     {
-      "id": "project-3",
-      "title": "Expense Manager",
-      "description": "Application for managing expenses.",
-      "imageUrl": "/assets/images/projects/todo-app.png",
-      "technologies": ["NestJS", "TypeScript", "Swagger", "Jest"],
-      "repository": {
-        "label": "GitHub",
-        "url": "https://github.com/youruser/todo-app"
-      },
-      "demo": {
-        "label": "App",
-        "url": "https://your-demo.com"
-      },
-      "featured": true
-    },
-    {
       "id": "project-2",
       "title": "Portfolio",
-      "description": "Simple portfolio app with clean architecture and reusable components.",
-      "imageUrl": "/assets/images/projects/todo-app.png",
+      "description": "Simple and Reusable Portfolio App for You.",
+      "imageUrl": "/assets/images/projects/proj.png",
       "technologies": ["Angular", "TypeScript", "Tailwind", "Vitest"],
       "repository": {
         "label": "GitHub",
-        "url": "https://github.com/youruser/todo-app"
+        "url": "https://github.com/ivanepais/portfolio"
       },
       "demo": {
         "label": "App",
-        "url": "https://your-demo.com"
+        "url": "https://ivanepais.github.io/portfolio"
       },
       "featured": true
     },
     {
       "id": "project-1",
       "title": "Todo App",
-      "description": "Application for managing daily tasks with clean architecture and reusable components.",
-      "imageUrl": "/assets/images/projects/todo-app.png",
+      "description": "App for your daily tasks.",
+      "imageUrl": "/assets/images/projects/proj.png",
       "technologies": ["TypeScript", "React", "CSS/StyledComponents", "Vitest", "RTL"],
       "repository": {
         "label": "GitHub",
-        "url": "https://github.com/youruser/todo-app"
+        "url": "https://github.com/ivanepais/today-app"
       },
       "demo": {
         "label": "App",
-        "url": "https://your-demo.com"
+        "url": "https://ivanepais.github.io/today-app"
       },
       "featured": true
     }
@@ -172,7 +156,7 @@
     {
       "platform": "github",
       "label": "GitHub",
-      "url": "https://github.com/youruser"
+      "url": "https://github.com/ivanepais"
     },
     {
       "platform": "linkedin",
@@ -181,7 +165,7 @@
     }
   ],
   "contact": {
-    "email": "youremail@correo.com",
+    "email": "ivan.e.pais@gmail.com",
     "location": "Argentina",
     "availableForWork": true,
     "timezone": "America/Argentina/Buenos_Aires"
