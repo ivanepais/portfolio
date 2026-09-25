@@ -8,22 +8,6 @@
   },
   "projects": [
     {
-      "id": "project-4",
-      "title": "Python BTC Bot",
-      "description": "Application to get the BTC price in real time.",
-      "imageUrl": "/assets/images/projects/todo-app.png",
-      "technologies": ["Python", "MyPy", "Pytest"],
-      "repository": {
-        "label": "GitHub",
-        "url": "https://github.com/youruser/todo-app"
-      },
-      "demo": {
-        "label": "Demo",
-        "url": "https://your-demo.com"
-      },
-      "featured": true
-    },
-    {
       "id": "project-3",
       "title": "Expense Manager",
       "description": "Application for managing expenses.",
@@ -34,7 +18,7 @@
         "url": "https://github.com/youruser/todo-app"
       },
       "demo": {
-        "label": "Demo",
+        "label": "App",
         "url": "https://your-demo.com"
       },
       "featured": true
@@ -50,7 +34,7 @@
         "url": "https://github.com/youruser/todo-app"
       },
       "demo": {
-        "label": "Demo",
+        "label": "App",
         "url": "https://your-demo.com"
       },
       "featured": true
@@ -66,7 +50,7 @@
         "url": "https://github.com/youruser/todo-app"
       },
       "demo": {
-        "label": "Demo",
+        "label": "App",
         "url": "https://your-demo.com"
       },
       "featured": true
@@ -125,6 +109,20 @@
     {
       "id": "skill-c",
       "name": "C",
+      "category": "Backend",
+      "level": "advanced",
+      "featured": true
+    },
+    {
+      "id": "skill-docker",
+      "name": "Docker",
+      "category": "Backend",
+      "level": "advanced",
+      "featured": true
+    },
+    {
+      "id": "skill-linux",
+      "name": "Linux",
       "category": "Backend",
       "level": "advanced",
       "featured": true

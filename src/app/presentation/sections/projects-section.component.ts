@@ -13,7 +13,7 @@ import { Project } from '@domain/project.entity';
         <div class="mt-8 grid gap-6 md:grid-cols-2">
           @for (project of projects; track project.id) {
             <article
-              class="border-border bg-surface rounded-2xl border p-6 shadow-sm transition-shadow hover:shadow-md"
+              class="border-border bg-surface rounded-2xl border p-6 shadow-sm transition-shadow hover:shadow-md md:[&:last-child:nth-child(odd)]:col-span-2"
             >
               <h3 class="text-text text-xl font-semibold tracking-tight">
                 {{ project.title }}
