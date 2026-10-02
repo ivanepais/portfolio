@@ -10,7 +10,7 @@ import { Project } from '@domain/project.entity';
   template: `
     <section id="projects" class="scroll-mt-20">
       <div class="mx-auto max-w-2xl">
-        <div class="mt-8 grid gap-6 md:grid-cols-2">
+        <div class="mt-8 grid gap-8 md:grid-cols-2">
           @for (project of projects; track project.id) {
             <article
               class="border-border bg-surface rounded-2xl border p-6 shadow-sm transition-shadow hover:shadow-md md:[&:last-child:nth-child(odd)]:col-span-2"

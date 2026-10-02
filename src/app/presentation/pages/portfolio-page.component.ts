@@ -44,7 +44,7 @@ export class PortfolioPageComponent implements OnInit {
 
   readonly content = signal<PortfolioContent | null>(null);
 
-  readonly footerText = '© 2026 Your Name. All rights reserved.';
+  readonly footerText = '© 2026 Iván Pais. All rights reserved.';
 
   async ngOnInit(): Promise<void> {
     const portfolio = await this.portfolioFacade.load();

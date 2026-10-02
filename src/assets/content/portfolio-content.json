@@ -4,9 +4,25 @@
     "role": "Software Developer | Help Desk | Cybersecurity",
     "headline": "I believe in integrity as a value.",
     "summary": "I am interested in architecture, product, and business.",
-    "avatarUrl": "assets/images/avatar.svg"
+    "avatarUrl": "assets/images/avatar.jpg"
   },
   "projects": [
+    {
+      "id": "project-3",
+      "title": "Task Manager API",
+      "description": "A RESTful API to provide infrastructure for a frontend.",
+      "imageUrl": "/assets/images/projects/proj.png",
+      "technologies": ["NestJS", "TypeOrm", "PostgreSQL", "SwaggerUI", "Docker", "Jest"],
+      "repository": {
+        "label": "GitHub",
+        "url": "https://github.com/ivanepais/task-manager-api/"
+      },
+      "demo": {
+        "label": "App",
+        "url": "https://task-manager-api-9gi8.onrender.com/api/v1/docs"
+      },
+      "featured": true
+    },
     {
       "id": "project-2",
       "title": "Portfolio",
@@ -161,7 +177,7 @@
     {
       "platform": "linkedin",
       "label": "LinkedIn",
-      "url": "https://linkedin.com/in/youruser"
+      "url": "https://linkedin.com/in/ivan-pais"
     }
   ],
   "contact": {

@@ -10,10 +10,10 @@ import { SocialLink } from '@domain/social-link.entity';
   imports: [CommonModule],
   template: `
     <header class="mx-auto flex max-w-2xl items-center justify-between">
-      <div class="size-12 rounded-full object-cover">
+      <div>
         @if (profile.avatarUrl) {
           <img
-            class="portfolio-header__avatar"
+            class="size-14 rounded-full object-cover"
             [src]="profile.avatarUrl"
             [alt]="profile.fullName"
           />
@@ -37,7 +37,7 @@ import { SocialLink } from '@domain/social-link.entity';
           }
           <a
             class="border-border text-text hover:bg-muted inline-flex items-center rounded-full border px-4 py-2 text-sm font-medium transition-colors"
-            href="../../../assets/public/documents/cv.pdf"
+            href="assets/public/documents/cv.pdf"
             target="_blank"
             rel="noopener noreferrer"
           >
