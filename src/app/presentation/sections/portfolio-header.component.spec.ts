@@ -65,7 +65,7 @@ describe('PortfolioHeaderComponent', () => {
       name: 'CV'
     });
 
-    expect(cvLink.getAttribute('href')).toBe('../../../assets/public/documents/cv.pdf');
+    expect(cvLink.getAttribute('href')).toBe('assets/public/documents/cv.pdf');
   });
 
   it('do not show the avatar when it does not exist', async () => {

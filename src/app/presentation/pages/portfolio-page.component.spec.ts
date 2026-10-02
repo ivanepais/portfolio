@@ -208,7 +208,7 @@ describe('PortfolioPageComponent', () => {
     );
 
     expect(screen.getByTestId('portfolio-layout-footer-text').textContent).toContain(
-      '© 2026 Your Name. All rights reserved.'
+      '© 2026 Iván Pais. All rights reserved.'
     );
 
     expect(screen.getByTestId('hero-profile').textContent).toContain(
